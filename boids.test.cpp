@@ -95,7 +95,7 @@ TEST_CASE("Testing Allboids implementation") {
     const b::Boid& boidriferimento = gruppo.getBoids()[0];
     size_t indice = 0;
 
-    std::vector<b::Boid> vicini = gruppo.boidsVicini(indice);
+    std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
     CHECK(vicini.size() == 1);
     CHECK(vicini[0].posizione.x == doctest::Approx(5.0));
   }
@@ -106,7 +106,7 @@ TEST_CASE("Testing Allboids implementation") {
 
     const b::Boid& boidriferimento = gruppo.getBoids()[0];
     size_t indice =0;
-    std::vector<b::Boid> vicini = gruppo.boidsVicini(indice);
+    std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
     CHECK(vicini.empty());
   }
   SUBCASE("Testing viciniDS") {
@@ -197,7 +197,7 @@ TEST_CASE("Testing Allboids implementation") {
     b::vettore initial_vel = {1.0, 0.0};
     gruppo.aggiungiBoid(b::Boid(initial_pos, initial_vel));
 
-    gruppo.aggiornaBoids(1.0, 0.5, 0.5, 0.5);
+    gruppo.aggiornaBoids(10.0, 1.0, 0.5, 0.5, 0.5);
 
     const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
 
@@ -220,13 +220,13 @@ TEST_CASE("Testing Allboids implementation") {
     b::vettore velB = {0.0, 0.0};
     gruppo.aggiungiBoid(b::Boid(posB, velB));
 
-    
+    double raggioVisuale = 10.0;
     double raggioSeparazione = 0.5;
     double fattoreSeparazione = 1.0;
     double fattoreAllineamento = 0.0;
     double fattoreCoesione = 0.0;
 
-    gruppo.aggiornaBoids(raggioSeparazione, fattoreSeparazione, fattoreAllineamento,
+    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazione, fattoreSeparazione, fattoreAllineamento,
                          fattoreCoesione);
 
     const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
@@ -255,6 +255,7 @@ TEST_CASE("Testing Allboids implementation") {
     b::vettore posB = {1.0, 0.0};
     b::vettore velB = {-1.0, -1.0};
     gruppo.aggiungiBoid(b::Boid(posB, velB));
+    double raggioVisuale = 10.0;
 
     double raggioSeparazioneDS = 0.1;
 
@@ -264,7 +265,7 @@ TEST_CASE("Testing Allboids implementation") {
 
     double fattoreCoesione = 0.0;
 
-    gruppo.aggiornaBoids(raggioSeparazioneDS, fattoreSeparazione,
+    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS, fattoreSeparazione,
                         fattoreAllineamento, fattoreCoesione);
 
     const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
@@ -302,12 +303,13 @@ TEST_CASE("Testing Allboids implementation") {
     b::vettore velB = {0.0, 0.0};
     gruppo.aggiungiBoid(b::Boid(posB, velB));
 
+    double raggioVisuale = 10.0;
     double raggioSeparazioneDS = 0.1;
     double fattoreSeparazione = 0.0;
     double fattoreAllineamento = 0.0;
     double fattoreCoesione = 1.0;
 
-    gruppo.aggiornaBoids(raggioSeparazioneDS, fattoreSeparazione,
+    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS, fattoreSeparazione,
                          fattoreAllineamento, fattoreCoesione);
 
     const std::vector<b::Boid>& updated_boids = gruppo.getBoids();

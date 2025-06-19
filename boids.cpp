@@ -28,9 +28,9 @@ void Boid::variazioneVel(vettore const& v1, vettore const& v2,
 }
 void Boid::aggiorna(std::vector<Boid>& boids, double width, double height,
   double d, double ds, double s, double a, double c, double dt) {
-vettore somma_allineamento(0.f, 0.f);
-vettore somma_coesione(0.f, 0.f);
-vettore separazione(0.f, 0.f);
+vettore somma_allineamento(0.0, 0.0);
+vettore somma_coesione(0.0, 0.0);
+vettore separazione(0.0, 0.0);
 int count = 0;
 
 for (const auto& altro : boids) {
@@ -54,8 +54,8 @@ separazione = separazione - (altro.posizione - posizione) * (1.0/ (distanza * di
 }
 }
 
-vettore allineamento(0.f, 0.f);
-vettore coesione(0.f, 0.f);
+vettore allineamento(0.0, 0.0);
+vettore coesione(0.0, 0.0);
 
 if (count > 0) {
 
