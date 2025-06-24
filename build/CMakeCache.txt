@@ -149,7 +149,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=regression
+CMAKE_PROJECT_NAME:STATIC=progettopf
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1.0
@@ -256,17 +256,23 @@ MEMORYCHECK_COMMAND:FILEPATH=MEMORYCHECK_COMMAND-NOTFOUND
 //File that contains suppressions for the memory checker
 MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 
+//The directory containing a CMake configuration file for SFML.
+SFML_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SFML
+
+//Path to a file.
+SFML_DOC_DIR:PATH=SFML_DOC_DIR-NOTFOUND
+
 //Name of the computer/site where compile is being run
 SITE:STRING=penguin
 
 //Value Computed by CMake
-regression_BINARY_DIR:STATIC=/home/righif5/progetto2024-pippo-pelaz/build
+progettopf_BINARY_DIR:STATIC=/home/righif5/progetto2024-pippo-pelaz/build
 
 //Value Computed by CMake
-regression_IS_TOP_LEVEL:STATIC=ON
+progettopf_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-regression_SOURCE_DIR:STATIC=/home/righif5/progetto2024-pippo-pelaz
+progettopf_SOURCE_DIR:STATIC=/home/righif5/progetto2024-pippo-pelaz
 
 
 ########################

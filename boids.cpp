@@ -70,7 +70,7 @@ coesione = centro - posizione;
 velocità = velocità + separazione * s  + allineamento * a + coesione * c;
 
 
-double vmax = 2.0f;
+double vmax = 2.0;
 if (velocità.modulo() > vmax) {
 velocità = velocità.normalizzato() * vmax;
 }
@@ -93,7 +93,7 @@ std::vector<Boid> Allboids::boidsVicini(size_t indice, double d) const {
   const Boid& boid = boids[indice];
   for (size_t i = 0; i < boids.size(); ++i) {
     if (i != indice) {
-      if ((boids[i].posizione - boid.posizione).modulo() < rvisuale) {
+      if ((boids[i].posizione - boid.posizione).modulo() < d) {
         vicini.push_back(boids[i]);
       };
     };
@@ -133,7 +133,7 @@ vettore Allboids::allineamento(Boid const& boid,
   for (auto& b : boidsVicini) {
     sommaVel = sommaVel + b.velocità;
   }
-  vettore mediaVel = sommaVel * (1.0 / boidsVicini.size());
+  vettore mediaVel = sommaVel * (1.0 / static_cast<double>(boidsVicini.size()));
   vettore diff = mediaVel - boid.velocità;
   return diff * a;
 }
@@ -146,14 +146,14 @@ vettore Allboids::coesione(Boid const& boid,
   for (const auto& b : boidsVicini) {
     sommaPos = sommaPos + b.posizione;
   }
-  vettore centrodimassa = sommaPos * (1.0 / boidsVicini.size());
+  vettore centrodimassa = sommaPos * (1.0 / static_cast<double>(boidsVicini.size()));
   vettore direzionecentro = centrodimassa - boid.posizione;
   return direzionecentro * c;
 }
 void Allboids::aggiornaBoids(double d, double ds, double s, double a,
                              double c) {
   std::vector<vettore> nuoveVelocità(boids.size());
-  const double maxVel = 2.0;
+  maxVel = 2.0;
   for (size_t i = 0; i < boids.size(); ++i) {
     const Boid& boid = boids[i];
     std::vector<Boid> vicini = boidsVicini(i, d);

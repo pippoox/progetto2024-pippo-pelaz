@@ -1,0 +1,19 @@
+Start testing: Jun 24 23:44 CEST
+----------------------------------------------------------
+Unable to find executable: /home/righif5/progetto2024-pippo-pelaz/boids.t
+1/1 Testing: boids.t
+1/1 Test: boids.t
+Command: ""
+Directory: /home/righif5/progetto2024-pippo-pelaz
+"boids.t" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"boids.t" end time: Jun 24 23:44 CEST
+"boids.t" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 24 23:44 CEST

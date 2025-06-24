@@ -92,7 +92,7 @@ TEST_CASE("Testing Allboids implementation") {
     gruppo.aggiungiBoid(boid1);
     gruppo.aggiungiBoid(boid2);
     gruppo.aggiungiBoid(boid3);
-    const b::Boid& boidriferimento = gruppo.getBoids()[0];
+    
     size_t indice = 0;
 
     std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
@@ -104,7 +104,7 @@ TEST_CASE("Testing Allboids implementation") {
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     gruppo.aggiungiBoid(boid1);
 
-    const b::Boid& boidriferimento = gruppo.getBoids()[0];
+    
     size_t indice =0;
     std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
     CHECK(vicini.empty());

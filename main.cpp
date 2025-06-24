@@ -16,11 +16,11 @@ void distanzaMediaeDevStd(const std::vector<b::Boid>& boids, double& media,
   }
   double somma = 0.0;
   for (double d : distanze) somma += d;
-  media = somma / distanze.size();
+  media = somma / static_cast<double>(distanze.size());
 
   double sommaQuad = 0.0;
   for (double d : distanze) sommaQuad += (d - media) * (d - media);
-  devStd = std::sqrt(sommaQuad / distanze.size());
+  devStd = std::sqrt(sommaQuad / static_cast<double>(distanze.size()));
 }
 
 void velocitaMediaeDevStd(const std::vector<b::Boid>& boids, double& media,
@@ -32,11 +32,11 @@ void velocitaMediaeDevStd(const std::vector<b::Boid>& boids, double& media,
   }
   double somma = 0.0;
   for (double v : moduli) somma += v;
-  media = somma / n;
+  media = somma / static_cast<double>(n);
 
   double sommaQuad = 0.0;
   for (double v : moduli) sommaQuad += (v - media) * (v - media);
-  devStd = std::sqrt(sommaQuad / n);
+  devStd = std::sqrt(sommaQuad / static_cast<double>(n));
 }
 
 int main() {

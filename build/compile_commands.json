@@ -1,0 +1,107 @@
+[
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sim.dir/Debug/main.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sim.dir/Debug/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/Release/main.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/Release/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/main.grafica.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/visualizzazione.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.t.dir/Debug/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.t.dir/Debug/boids.test.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.test.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.test.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/boids.test.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.test.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.test.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-pippo-pelaz/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o -c /home/righif5/progetto2024-pippo-pelaz/boids.test.cpp",
+  "file": "/home/righif5/progetto2024-pippo-pelaz/boids.test.cpp"
+}
+]

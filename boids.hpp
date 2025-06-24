@@ -8,7 +8,7 @@ namespace b {
 struct vettore {
   double x;
   double y;
-  vettore(double x_ = 0, double y_ = 0) : x(x_), y(y_) {};
+  vettore(double x_ = 0, double y_ = 0) : x(x_), y(y_) {}
   vettore operator+(vettore const& v) const;
   vettore operator-(vettore const& v) const;
   vettore operator*(double a) const;
@@ -20,7 +20,7 @@ class Boid {
  public:
   vettore posizione;
   vettore velocità;
-  Boid(vettore pos, vettore vel) : posizione(pos), velocità(vel) {};
+  Boid(vettore pos, vettore vel) : posizione(pos), velocità(vel) {}
   void variazionePos(double dt);
   void variazioneVel(vettore const& v1, vettore const& v2, vettore const& v3,
                      double maxVelocità);
@@ -37,7 +37,7 @@ class Allboids {
 
  public:
   Allboids(double d, double dt, double mv)
-      : rvisuale(d), deltaTempo(dt), maxVel(mv) {};
+      : rvisuale(d), deltaTempo(dt), maxVel(mv) {}
   const std::vector<Boid>& getBoids() const;
   void aggiungiBoid(Boid const& boid);
   std::vector<Boid> boidsVicini(size_t indice, double d) const;

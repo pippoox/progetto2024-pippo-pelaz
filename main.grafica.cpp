@@ -11,13 +11,13 @@ void inizializzaBoids(std::vector<Boid>& boids, int N, double width,double heigh
         double x = static_cast<double>(rand() % static_cast<int>(width));
         double y = static_cast<double>(rand() % static_cast<int>(height));
         vettore pos(x, y);
-        vettore vel((rand() % 200 - 100) / 100.f, (rand() % 200 - 100) / 100.f); // random tra -1 e 1
+        vettore vel((rand() % 200 - 100) / 100, (rand() % 200 - 100) / 100); // random tra -1 e 1
         boids.emplace_back(pos, vel);  
     }
 }
 
 int main() {
-    std::srand(std::time(nullptr));
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
     const int N = 100;
     const double width = 800;
@@ -30,7 +30,8 @@ int main() {
     const double c = 0.01;
     const double dt = 1.0;
 
-    sf::RenderWindow window(sf::VideoMode((unsigned int)width, (unsigned int)height), "Boids Simulation");
+    sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(width), static_cast<unsigned int>(height)), "Boids Simulation");
+
 
     std::vector<b::Boid> boids;
     inizializzaBoids(boids, N, width, height);
@@ -53,7 +54,7 @@ int main() {
         for (const auto& boid : boids) {
             sf::CircleShape shape(4);
             shape.setFillColor(sf::Color::White);
-            shape.setPosition(boid.posizione.x, boid.posizione.y);
+            shape.setPosition(static_cast<float>(boid.posizione.x), static_cast<float>(boid.posizione.y));
             window.draw(shape);
         }
 
