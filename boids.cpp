@@ -27,7 +27,8 @@ void Boid::variazioneVel(vettore const& v1, vettore const& v2,
   }
 }
 void Boid::aggiorna(std::vector<Boid>& boids, double width, double height,
-  double d, double ds, double s, double a, double c, double dt) {
+  double d, double ds, double s, double a, double c,
+  double dt) {
 vettore somma_allineamento(0.0, 0.0);
 vettore somma_coesione(0.0, 0.0);
 vettore separazione(0.0, 0.0);
@@ -39,17 +40,15 @@ if (&altro == this) continue;
 double distanza = (altro.posizione - posizione).modulo();
 
 if (distanza < d) {
-
 somma_allineamento = somma_allineamento + altro.velocità;
 
-
-somma_coesione = somma_coesione +altro.posizione;
+somma_coesione = somma_coesione + altro.posizione;
 
 count++;
 
-
 if (distanza < ds && distanza > 0) {
-separazione = separazione - (altro.posizione - posizione) * (1.0/ (distanza * distanza));
+separazione = separazione - (altro.posizione - posizione) *
+                      (1.0 / (distanza * distanza));
 }
 }
 }
@@ -58,32 +57,28 @@ vettore allineamento(0.0, 0.0);
 vettore coesione(0.0, 0.0);
 
 if (count > 0) {
-
-allineamento = (somma_allineamento * (1.0 / static_cast<double>(count))) - velocità;
-
+allineamento =
+(somma_allineamento * (1.0 / static_cast<double>(count))) - velocità;
 
 vettore centro = somma_coesione * (1.0 / static_cast<double>(count));
 coesione = centro - posizione;
 }
 
-
-velocità = velocità + separazione * s  + allineamento * a + coesione * c;
-
+velocità = velocità + separazione * s + allineamento * a + coesione * c;
 
 double vmax = 2.0;
 if (velocità.modulo() > vmax) {
 velocità = velocità.normalizzato() * vmax;
 }
 
-
 posizione = posizione + velocità * dt;
-
 
 if (posizione.x < 0) posizione.x = width;
 if (posizione.x > width) posizione.x = 0;
 if (posizione.y < 0) posizione.y = height;
 if (posizione.y > height) posizione.y = 0;
 }
+
 
 
 void Allboids::aggiungiBoid(Boid const& boid) { boids.push_back(boid); };

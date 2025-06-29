@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "boids.hpp"
-
+namespace sf {
 class Visualizzazione {
  public:
   Visualizzazione(unsigned int width, unsigned int height);
@@ -15,5 +15,6 @@ class Visualizzazione {
   unsigned int windowWidth;
   unsigned int windowHeight;
 };
+}  // namespace b
 
 #endif

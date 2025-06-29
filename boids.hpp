@@ -24,8 +24,9 @@ class Boid {
   void variazionePos(double dt);
   void variazioneVel(vettore const& v1, vettore const& v2, vettore const& v3,
                      double maxVelocità);
-  void aggiorna(std::vector<Boid>& boids, double width, double height, double d,
-                double ds, double s, double a, double c, double dt);
+  void aggiorna(std::vector<Boid>& boids, double width, double height,
+                      double d, double ds, double s, double a, double c,
+                      double dt);
 };
 
 class Allboids {
