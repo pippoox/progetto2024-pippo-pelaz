@@ -1,10 +1,10 @@
-Start testing: Jun 29 19:11 CEST
+Start testing: Jun 30 21:57 CEST
 ----------------------------------------------------------
 1/1 Testing: boids.t
 1/1 Test: boids.t
 Command: "/home/righif5/progetto2024-pippo-pelaz/build/Release/boids.t"
 Directory: /home/righif5/progetto2024-pippo-pelaz/build
-"boids.t" start time: Jun 29 19:11 CEST
+"boids.t" start time: Jun 30 21:57 CEST
 Output:
 ----------------------------------------------------------
 [doctest] doctest version is "2.4.12"
@@ -17,8 +17,8 @@ Output:
 Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"boids.t" end time: Jun 29 19:11 CEST
+"boids.t" end time: Jun 30 21:57 CEST
 "boids.t" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Jun 29 19:11 CEST
+End testing: Jun 30 21:57 CEST

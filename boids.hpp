@@ -14,8 +14,9 @@ struct vettore {
   vettore operator*(double a) const;
   double modulo() const;
   vettore normalizzato() const;
-};
+}; //Rappresenta un vettore 2D con operazioni di base: somma, differenza, prodotto per scalare, modulo e normalizzazione.
 
+//Classe Boid: rappresenta un singolo boid con posizione e velocità. Include metodi per aggiornare movimento e interazioni con altri boid.
 class Boid {
  public:
   vettore posizione;
@@ -29,6 +30,7 @@ class Boid {
                       double dt);
 };
 
+//Classe Allboids: gestisce un insieme di boid e le regole collettive della simulazione.
 class Allboids {
  private:
   std::vector<Boid> boids;

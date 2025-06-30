@@ -1,65 +1,70 @@
 #include <SFML/Graphics.hpp>
-#include "boids.hpp"        
-#include "visualizzazione.hpp"  
+#include <random>
+
+#include "boids.hpp"
+#include "visualizzazione.hpp"
 
 using namespace sf;
-using namespace b; 
+using namespace b;
 
+// Funzione per inizializzare N boid con posizioni casuali e velocità casuali
+void inizializzaBoids(std::vector<Boid>& boids, int N, double width,
+                      double height) {
+  std::random_device rd;   // genera un numero casuale imprevedibile dal sistema
+  std::mt19937 gen(rd());  // motore di generazione (Mersenne Twister)
+  std::uniform_real_distribution<double> posDistX(0.0, width);
+  std::uniform_real_distribution<double> posDistY(0.0, height);
+  std::uniform_real_distribution<double> velDist(-1.0, 1.0);
 
-void inizializzaBoids(std::vector<Boid>& boids, int N, double width,double height) {
-    for (int i = 0; i < N; ++i) {
-        double x = static_cast<double>(rand() % static_cast<int>(width));
-        double y = static_cast<double>(rand() % static_cast<int>(height));
-        vettore pos(x, y);
-        vettore vel((rand() % 200 - 100) / 100, (rand() % 200 - 100) / 100); // random tra -1 e 1
-        boids.emplace_back(pos, vel);  
-    }
+  for (int i = 0; i < N; ++i) {
+    vettore pos(posDistX(gen),
+                posDistY(gen));  // posizione casuale nell'area della finestra
+    vettore vel(velDist(gen), velDist(gen));  // velocità casuale tra -1 e 1
+    boids.emplace_back(pos, vel);             // aggiunta al vettore
+  }
 }
 
 int main() {
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+  const int N = 100;
+  const double width = 800;
+  const double height = 600;
 
-    const int N = 100;
-    const double width = 800;
-    const double height = 600;
+  const double d = 100.0;
+  const double ds = 50.0;
+  const double s = 10.0;
+  const double a = 0.01;
+  const double c = 0.01;
+  const double dt = 1.0;
 
-    const double d = 100.0;
-    const double ds = 50.0;
-    const double s = 10.0;
-    const double a = 0.01;
-    const double c = 0.01;
-    const double dt = 1.0;
+  sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(width),
+                                        static_cast<unsigned int>(height)),
+                          "Boids Simulation");
 
-    sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(width), static_cast<unsigned int>(height)), "Boids Simulation");
+  std::vector<b::Boid> boids;
+  inizializzaBoids(boids, N, width, height);
 
-
-    std::vector<b::Boid> boids;
-    inizializzaBoids(boids, N, width, height);
-
-    while (window.isOpen()) {
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        
-        for (auto& boid : boids) {
-            boid.aggiorna(boids, width, height, d, ds, s, a, c, dt);
-        }
-
-        
-        window.clear(sf::Color::Black);
-
-        for (const auto& boid : boids) {
-            sf::CircleShape shape(4);
-            shape.setFillColor(sf::Color::White);
-            shape.setPosition(static_cast<float>(boid.posizione.x), static_cast<float>(boid.posizione.y));
-            window.draw(shape);
-        }
-
-        window.display();
+  while (window.isOpen()) {
+    sf::Event event;
+    while (window.pollEvent(event)) {
+      if (event.type == sf::Event::Closed) window.close();
     }
 
-    return 0;
+    for (auto& boid : boids) {
+      boid.aggiorna(boids, width, height, d, ds, s, a, c, dt);
+    }
+
+    window.clear(sf::Color::Black);
+
+    for (const auto& boid : boids) {
+      sf::CircleShape shape(4);
+      shape.setFillColor(sf::Color::White);
+      shape.setPosition(static_cast<float>(boid.posizione.x),
+                        static_cast<float>(boid.posizione.y));
+      window.draw(shape);
+    }
+
+    window.display();
+  }
+
+  return 0;
 }

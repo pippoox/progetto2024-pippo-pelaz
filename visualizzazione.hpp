@@ -4,10 +4,16 @@
 #include <SFML/Graphics.hpp>
 
 #include "boids.hpp"
-namespace sf {
+namespace b {
+// Classe Visualizzazione
+// Scopo: gestisce il rendering dei boid in una finestra SFML
+// - windowWidth e windowHeight: dimensioni della finestra
+// - disegnaBoids: disegna i boid dati in input (posizioni)
 class Visualizzazione {
  public:
   Visualizzazione(unsigned int width, unsigned int height);
+
+  // Disegna i boid usando le loro posizioni
   void disegnaBoids(const std::vector<sf::Vector2f>& posizioni,
                     sf::RenderWindow& window);
 
