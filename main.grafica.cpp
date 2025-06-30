@@ -43,10 +43,13 @@ int main() {
   std::vector<b::Boid> boids;
   inizializzaBoids(boids, N, width, height);
 
+  b::Visualizzazione visualizzazione(width, height);
+
   while (window.isOpen()) {
     sf::Event event;
     while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) window.close();
+      if (event.type == sf::Event::Closed)
+        window.close();
     }
 
     for (auto& boid : boids) {
@@ -55,14 +58,14 @@ int main() {
 
     window.clear(sf::Color::Black);
 
+    // Costruisci le posizioni da passare alla visualizzazione
+    std::vector<sf::Vector2f> posizioni;
     for (const auto& boid : boids) {
-      sf::CircleShape shape(4);
-      shape.setFillColor(sf::Color::White);
-      shape.setPosition(static_cast<float>(boid.posizione.x),
-                        static_cast<float>(boid.posizione.y));
-      window.draw(shape);
+      posizioni.emplace_back(static_cast<float>(boid.posizione.x),
+                             static_cast<float>(boid.posizione.y));
     }
 
+    visualizzazione.disegnaBoids(posizioni, window);
     window.display();
   }
 
