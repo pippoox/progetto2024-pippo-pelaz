@@ -34,3 +34,9 @@
 15	7131	1751317233255001005	CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o	ac15ea6d99746a70
 7131	7794	1751317233915000984	Release/boids.sfml	c56306575811605f
 7	190	0	CMakeFiles/Release/test.util	434a75812b506b43
+87	9862	1751377182370732500	CMakeFiles/boids.sfml.dir/Debug/main.grafica.cpp.o	f4e73a4267cdfb97
+9865	12033	1751377184540732432	Debug/boids.sfml	1b04853e6f79b426
+8	647	0	CMakeFiles/Debug/test.util	ea3614dadb67e224
+28	6904	1751377206498731745	CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o	ac15ea6d99746a70
+6904	7657	1751377207242731722	Release/boids.sfml	c56306575811605f
+5	126	0	CMakeFiles/Debug/test.util	ea3614dadb67e224

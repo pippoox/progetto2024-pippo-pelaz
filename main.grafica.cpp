@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <random>
+#include <iostream>
 
 #include "boids.hpp"
 #include "visualizzazione.hpp"
@@ -25,16 +26,34 @@ void inizializzaBoids(std::vector<Boid>& boids, int N, double width,
 }
 
 int main() {
-  const int N = 100;
+  
   const double width = 800;
   const double height = 600;
 
-  const double d = 100.0;
-  const double ds = 50.0;
-  const double s = 10.0;
-  const double a = 0.01;
-  const double c = 0.01;
-  const double dt = 1.0;
+  int N;
+  double d, ds, s, a, c, dt;
+
+  // Input utente
+  std::cout << "Inserisci il numero di boid (N): ";
+  std::cin >> N;
+
+  std::cout << "Inserisci il raggio di visione (d): ";
+  std::cin >> d;
+
+  std::cout << "Inserisci il raggio di separazione (ds): ";
+  std::cin >> ds;
+
+  std::cout << "Inserisci il fattore di separazione (s): ";
+  std::cin >> s;
+
+  std::cout << "Inserisci il fattore di allineamento (a): ";
+  std::cin >> a;
+
+  std::cout << "Inserisci il fattore di coesione (c): ";
+  std::cin >> c;
+
+  std::cout << "Inserisci il passo temporale (dt): ";
+  std::cin >> dt;
 
   sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(width),
                                         static_cast<unsigned int>(height)),
