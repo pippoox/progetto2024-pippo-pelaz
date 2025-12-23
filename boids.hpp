@@ -35,12 +35,12 @@ class Flock {
  private:
   std::vector<Boid> boids;
   double rvisuale;
-  double deltaTempo;
+  double dt;
   double maxVel;
 
  public:
   Flock(double d, double dt, double mv)
-      : rvisuale(d), deltaTempo(dt), maxVel(mv) {}
+      : rvisuale(d), dt(dt), maxVel(mv), width(), height() {}
   const std::vector<Boid>& getBoids() const;
   void aggiungiBoid(Boid const& boid);
   std::vector<Boid> boidsVicini(size_t indice, double d) const;
@@ -52,8 +52,10 @@ class Flock {
 
   vettore coesione(Boid const& boid, const std::vector<Boid>& boidsVicini,
                    double c);
-  void aggiornaBoids(double d, double ds, double s, double a, double c);
-  double getdeltaTempo() const { return deltaTempo; }
+  void aggiornaBoids(double d, double ds, double s, double a, double c, double width, double height);
+  double getdeltaTempo() const { return dt; }
+  const double width;
+  const double height;
 };
 }  // namespace b
 

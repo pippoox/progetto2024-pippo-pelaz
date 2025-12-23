@@ -54,6 +54,8 @@ int main() {
   double a;   // Peso dell'allineamento
   double c;   // Peso della coesione
   double dt;  // Delta tempo
+  const double width = 800;
+  const double height = 600;
 
   std::cout << "Inserisci N, d, ds, s, a, c, dt:\n";
 
@@ -79,7 +81,7 @@ int main() {
   }
   const int aggiornamenti = 100;
   for (int step = 0; step < aggiornamenti; ++step) {
-    stormo.aggiornaBoids(d, ds, s, a, c);
+    stormo.aggiornaBoids(d, ds, s, a, c,width, height );
 
     double distMedia, distDevStd;
     distanzaMediaeDevStd(stormo.getBoids(), distMedia, distDevStd);
