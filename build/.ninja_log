@@ -1,4 +1,5 @@
 # ninja log v5
+<<<<<<< HEAD
 17	13445	1751313051496131814	CMakeFiles/boids.sim.dir/Release/main.cpp.o	219a1220f413c887
 33215	34353	1751313363011122067	Release/boids.t	e976f5ce9d284b36
 41	9977	1751313048075131921	CMakeFiles/boids.sfml.dir/Release/boids.cpp.o	a2f4cc5ba7cf563b
@@ -40,3 +41,33 @@
 28	6904	1751377206498731745	CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o	ac15ea6d99746a70
 6904	7657	1751377207242731722	Release/boids.sfml	c56306575811605f
 5	126	0	CMakeFiles/Debug/test.util	ea3614dadb67e224
+=======
+16	8920	1763666018512947388	CMakeFiles/boids.sim.dir/Debug/main.cpp.o	811066899d4a7ebc
+18	10590	1763666020186947339	CMakeFiles/boids.sfml.dir/Debug/main.grafica.cpp.o	d29ef69dbc05d61c
+25	6997	1763662748929049621	CMakeFiles/boids.t.dir/Debug/boids.cpp.o	f1a726e4d4399235
+6299	37538	1763662779453048666	CMakeFiles/boids.t.dir/Debug/boids.test.cpp.o	5bf1fa0737939db9
+17	418	0	CMakeFiles/Debug/test.util	2eb91b3003550546
+13	6971	1763662748907049622	CMakeFiles/boids.sfml.dir/Debug/boids.cpp.o	d9305b6351f724b0
+29	7500	1763666029127947066	CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o	553b5bc888c893c
+5	6295	1763662748235049643	CMakeFiles/boids.sim.dir/Debug/boids.cpp.o	aac040ad994add6f
+30	5373	1763666026999947132	CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o	1e50dd97fc21d929
+14	3862	1763662784385048512	CMakeFiles/boids.sfml.dir/Release/boids.cpp.o	2caece5ccc257536
+14	4033	1763662784555048506	CMakeFiles/boids.t.dir/Release/boids.cpp.o	cad57d9547263903
+10590	11380	1763666020975947316	Debug/boids.sfml	1b04853e6f79b426
+37542	38185	1763662780124048645	Debug/boids.t	1c3a0cf245276e4d
+8	4331	1763662784852048497	CMakeFiles/boids.sim.dir/Release/boids.cpp.o	e46d6431233e86d2
+8920	9550	1763666019145947369	Debug/boids.sim	437864a0198e51e1
+5609	6166	1763666027789947107	Release/boids.sim	42c160cf435f3420
+6	75	0	CMakeFiles/Release/test.util	d47f169d50a2b5d6
+27	5609	1763666027236947124	CMakeFiles/boids.sim.dir/Release/main.cpp.o	469dce25653663e0
+19	8848	1763666018443947390	CMakeFiles/boids.sfml.dir/Debug/visualizzazione.cpp.o	985ea60c6c285894
+7501	8120	1763666029743947046	Release/boids.sfml	c56306575811605f
+34725	35313	1763662815832047528	Release/boids.t	e976f5ce9d284b36
+3863	34724	1763662815243047546	CMakeFiles/boids.t.dir/Release/boids.test.cpp.o	7c63d17736f90a9a
+11	6072	1763666199649941681	CMakeFiles/boids.sfml.dir/Debug/visualizzazione.cpp.o	985ea60c6c285894
+6072	6627	1763666200202941663	Debug/boids.sfml	1b04853e6f79b426
+5	114	0	CMakeFiles/Debug/test.util	2eb91b3003550546
+11	4688	1763666205124941508	CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o	1e50dd97fc21d929
+4689	5219	1763666205648941492	Release/boids.sfml	c56306575811605f
+5	67	0	CMakeFiles/Release/test.util	d47f169d50a2b5d6
+>>>>>>> master

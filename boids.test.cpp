@@ -83,9 +83,15 @@ TEST_CASE("Testing Boid implementation") {
     CHECK(b.velocità.y == doctest::Approx(0.0));
   }
 }
+<<<<<<< HEAD
 TEST_CASE("Testing Allboids implementation") {
   SUBCASE("Testing boidsVicini") {
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+TEST_CASE("Testing Flock implementation") {
+  SUBCASE("Testing boidsVicini") {
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({5.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({15.0, 0.0}, {0.0, 0.0});
@@ -100,7 +106,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(vicini[0].posizione.x == doctest::Approx(5.0));
   }
   SUBCASE("Testing boidsVicini vuoto") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     gruppo.aggiungiBoid(boid1);
 
@@ -110,7 +120,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(vicini.empty());
   }
   SUBCASE("Testing viciniDS") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({3.0, 0.0}, {0.0, 0.0});
@@ -124,7 +138,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(vicinids[0].posizione.x == doctest::Approx(1.0));
   }
   SUBCASE("Testing vettore di separazione") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({-1.0, 0.0}, {0.0, 0.0});
@@ -136,7 +154,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(separazione.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing separazione con un solo vicino") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
 
@@ -147,7 +169,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(separazione.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing vettore allineamento") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {1.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {2.0, 0.0});
     b::Boid boid3({2.0, 0.0}, {3.0, 0.0});
@@ -160,7 +186,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(allineamento.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing allineamento con nessun vicino") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {1.0, 0.0});
     std::vector<b::Boid> boidsVicini = {};
     double a = 0.5;
@@ -169,7 +199,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(allineamento.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing vettore coesione") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 1.0}, {0.0, 0.0});
     b::Boid boid3({-1.0, 1.0}, {0.0, 0.0});
@@ -182,7 +216,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(coesione.y == doctest::Approx(0.5));
   }
   SUBCASE("Testing coesione con nessun vicino") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     std::vector<b::Boid> boidsVicini = {};
     double c = 0.5;
@@ -191,7 +229,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(coesione.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing aggiornaBoids con nessun vicino") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
 
     b::vettore initial_pos = {0.0, 0.0};
     b::vettore initial_vel = {1.0, 0.0};
@@ -210,7 +252,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(updated_boids[0].velocità.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing aggiornaboids con separazione, no a,c") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
 
     b::vettore posA = {0.0, 0.0};
     b::vettore velA = {0.0, 0.0};
@@ -246,7 +292,11 @@ TEST_CASE("Testing Allboids implementation") {
     CHECK(updated_boids[1].posizione.x > doctest::Approx(posB.x));
   }
   SUBCASE("Testing aggiornaboids con allineamento, no s,c") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
 
     b::vettore posA = {0.0, 0.0};
     b::vettore velA = {1.0, 1.0};
@@ -293,7 +343,11 @@ TEST_CASE("Testing Allboids implementation") {
                           updated_boids[1].velocità.y * gruppo.getdeltaTempo()));
   }
   SUBCASE("Testing aggiornaboids con coesione, no s,a") {
+<<<<<<< HEAD
     b::Allboids gruppo(10.0, 0.1, 2.0);
+=======
+    b::Flock gruppo(10.0, 0.1, 2.0);
+>>>>>>> master
 
     b::vettore posA = {-2.0, 0.0};
     b::vettore velA = {0.0, 0.0};

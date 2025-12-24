@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Start testing: Jul 01 15:40 CEST
 ----------------------------------------------------------
 1/1 Testing: boids.t
@@ -5,6 +6,15 @@ Start testing: Jul 01 15:40 CEST
 Command: "/home/righif5/progetto2024-pippo-pelaz/build/Debug/boids.t"
 Directory: /home/righif5/progetto2024-pippo-pelaz/build
 "boids.t" start time: Jul 01 15:40 CEST
+=======
+Start testing: Nov 20 20:16 CET
+----------------------------------------------------------
+1/1 Testing: boids.t
+1/1 Test: boids.t
+Command: "/home/righif5/progetto2024-righi-zauli/build/Release/boids.t"
+Directory: /home/righif5/progetto2024-righi-zauli/build
+"boids.t" start time: Nov 20 20:16 CET
+>>>>>>> master
 Output:
 ----------------------------------------------------------
 [doctest] doctest version is "2.4.12"
@@ -14,6 +24,7 @@ Output:
 [doctest] assertions: 66 | 66 passed | 0 failed |
 [doctest] Status: SUCCESS!
 <end of output>
+<<<<<<< HEAD
 Test time =   0.07 sec
 ----------------------------------------------------------
 Test Passed.
@@ -22,3 +33,13 @@ Test Passed.
 ----------------------------------------------------------
 
 End testing: Jul 01 15:40 CEST
+=======
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"boids.t" end time: Nov 20 20:16 CET
+"boids.t" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 20 20:16 CET
+>>>>>>> master

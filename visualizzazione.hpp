@@ -14,12 +14,20 @@ class Visualizzazione {
   Visualizzazione(unsigned int width, unsigned int height);
 
   // Disegna i boid usando le loro posizioni
+<<<<<<< HEAD
   void disegnaBoids(const std::vector<sf::Vector2f>& posizioni,
+=======
+  void disegnaBoids(const std::vector<Boid>& boidData,
+>>>>>>> master
                     sf::RenderWindow& window);
 
  private:
   unsigned int windowWidth;
   unsigned int windowHeight;
+<<<<<<< HEAD
+=======
+  sf::ConvexShape boidShape;
+>>>>>>> master
 };
 }  // namespace b
 

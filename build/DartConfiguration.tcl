@@ -4,8 +4,13 @@
 
 
 # Configuration directories and files
+<<<<<<< HEAD
 SourceDirectory: /home/righif5/progetto2024-pippo-pelaz
 BuildDirectory: /home/righif5/progetto2024-pippo-pelaz/build
+=======
+SourceDirectory: /home/righif5/progetto2024-righi-zauli
+BuildDirectory: /home/righif5/progetto2024-righi-zauli/build
+>>>>>>> master
 
 # Where to place the cost data store
 CostDataFile: 
@@ -27,7 +32,11 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
+<<<<<<< HEAD
 ConfigureCommand: "/usr/bin/cmake" "/home/righif5/progetto2024-pippo-pelaz"
+=======
+ConfigureCommand: "/usr/bin/cmake" "/home/righif5/progetto2024-righi-zauli"
+>>>>>>> master
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -45,7 +54,11 @@ SVNOptions:
 SVNUpdateOptions: 
 
 # Git options
+<<<<<<< HEAD
 GITCommand: /usr/bin/git
+=======
+GITCommand: 
+>>>>>>> master
 GITInitSubmodules: 
 GITUpdateOptions: 
 GITUpdateCustom: 
@@ -58,9 +71,15 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
+<<<<<<< HEAD
 UpdateCommand: /usr/bin/git
 UpdateOptions: 
 UpdateType: git
+=======
+UpdateCommand: 
+UpdateOptions: 
+UpdateType: 
+>>>>>>> master
 
 # Compiler info
 Compiler: /usr/bin/c++
