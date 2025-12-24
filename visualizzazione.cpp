@@ -1,24 +1,4 @@
 #include "visualizzazione.hpp"
-<<<<<<< HEAD
-
-#include "boids.hpp"
-namespace b {
-// Costruttore della classe Visualizzazione
-// Imposta le dimensioni della finestra
-Visualizzazione::Visualizzazione(unsigned int width, unsigned int height)
-    : windowWidth(width), windowHeight(height) {}
-
-// Metodo per disegnare i boid
-// - Prende un vettore di posizioni (sf::Vector2f)
-// - Disegna un cerchio verde per ogni boid
-// - Li disegna sulla finestra passata come riferimento
-void Visualizzazione::disegnaBoids(const std::vector<sf::Vector2f>& posizioni,
-                                   sf::RenderWindow& window) {
-  for (const auto& pos : posizioni) {
-    sf::CircleShape boidShape(5.0); //Disegna un cerchio con raggio 5
-    boidShape.setFillColor(sf::Color::Green);
-    boidShape.setPosition(pos);
-=======
 #include "boids.hpp"
 
 #include <cmath>
@@ -39,14 +19,29 @@ Visualizzazione::Visualizzazione(unsigned int width, unsigned int height)
   boidShape.setPoint(2, sf::Vector2f(-width_boid / 2., size / 2.));
 
   boidShape.setOrigin(0., 0.);
-  boidShape.setFillColor(sf::Color::Green);
+  
 }
+
+static const std::vector<sf::Color> flockColors = {
+  sf::Color::Green,
+  sf::Color::Red,
+  sf::Color::Blue,
+  sf::Color::Yellow,
+  sf::Color::Magenta,
+  sf::Color::Cyan
+};
 
 // Metodo per disegnare i boid
 
-void Visualizzazione::disegnaBoids(const std::vector<Boid>& boidData,
+void Visualizzazione::disegnaBoids(const std::vector<std::vector<Boid>>& flocks,
                                    sf::RenderWindow& window) {
-  for (const auto& boid : boidData) {
+
+  for (int j = 0; j < flocks.size(); ++j) {
+
+    sf::Color colore = flockColors[j % flockColors.size()];
+    boidShape.setFillColor(colore);
+
+  for (const auto& boid : flocks[j]) {
     double vx = static_cast<double>(boid.velocità.x);
     double vy = static_cast<double>(boid.velocità.y);
     double px = static_cast<double>(boid.posizione.x);
@@ -68,8 +63,8 @@ void Visualizzazione::disegnaBoids(const std::vector<Boid>& boidData,
     // 2. Applica la rotazione
     boidShape.setRotation(rotation);
    
->>>>>>> master
     window.draw(boidShape);
   }
+}
 }
 }  // namespace b

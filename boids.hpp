@@ -25,28 +25,13 @@ class Boid {
   void variazionePos(double dt);
   void variazioneVel(vettore const& v1, vettore const& v2, vettore const& v3,
                      double maxVelocità);
-  void aggiorna(std::vector<Boid>& boids, double width, double height,
-                      double d, double ds, double s, double a, double c,
-                      double dt);
 };
 
-<<<<<<< HEAD
-//Classe Allboids: gestisce un insieme di boid e le regole collettive della simulazione.
-class Allboids {
- private:
-  std::vector<Boid> boids;
-  double rvisuale;
-  double deltaTempo;
-  double maxVel;
-
- public:
-  Allboids(double d, double dt, double mv)
-      : rvisuale(d), deltaTempo(dt), maxVel(mv) {}
-=======
 //Classe Flock: gestisce un insieme di boid e le regole collettive della simulazione.
 class Flock {
  private:
   std::vector<Boid> boids;
+  std::vector<std::vector<Boid>> flocks;
   double rvisuale;
   double dt;
   double maxVel;
@@ -54,9 +39,10 @@ class Flock {
  public:
   Flock(double d, double dt, double mv)
       : rvisuale(d), dt(dt), maxVel(mv), width(), height() {}
->>>>>>> master
   const std::vector<Boid>& getBoids() const;
+  const  std::vector<std::vector<Boid>>& getFlocks() const;
   void aggiungiBoid(Boid const& boid);
+  void aggiungiFlock(std::vector<Boid> const& boids);
   std::vector<Boid> boidsVicini(size_t indice, double d) const;
   std::vector<Boid> viciniDS(size_t indice, double ds) const;
   vettore separazione(Boid const& boid, const std::vector<Boid>& vicinids,
@@ -66,15 +52,10 @@ class Flock {
 
   vettore coesione(Boid const& boid, const std::vector<Boid>& boidsVicini,
                    double c);
-<<<<<<< HEAD
-  void aggiornaBoids(double d, double ds, double s, double a, double c);
-  double getdeltaTempo() const { return deltaTempo; }
-=======
   void aggiornaBoids(double d, double ds, double s, double a, double c, double width, double height);
   double getdeltaTempo() const { return dt; }
   const double width;
   const double height;
->>>>>>> master
 };
 }  // namespace b
 

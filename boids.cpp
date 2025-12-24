@@ -33,83 +33,23 @@ void Boid::variazioneVel(vettore const& v1, vettore const& v2,
   }
 }
 
-<<<<<<< HEAD
-// Metodo di aggiornamento di un singolo boid, utilizzato nella parte grafica
-void Boid::aggiorna(std::vector<Boid>& boids, double width, double height,
-                    double d, double ds, double s, double a, double c,
-                    double dt) {
-  vettore somma_allineamento(0.0, 0.0);
-  vettore somma_coesione(0.0, 0.0);
-  vettore separazione(0.0, 0.0);
-  int count = 0;
-
-  for (const auto& altro : boids) {
-    if (&altro == this) continue;
-
-    double distanza = (altro.posizione - posizione).modulo();
-
-    if (distanza < d) {
-      somma_allineamento = somma_allineamento + altro.velocità;
-
-      somma_coesione = somma_coesione + altro.posizione;
-
-      count++;
-
-      if (distanza < ds && distanza > 0) {
-        separazione = separazione - (altro.posizione - posizione) *
-                                        (1.0 / (distanza * distanza));
-      }
-    }
-  }
-
-  vettore allineamento(0.0, 0.0);
-  vettore coesione(0.0, 0.0);
-
-  if (count > 0) {
-    allineamento =
-        (somma_allineamento * (1.0 / static_cast<double>(count))) - velocità;
-
-    vettore centro = somma_coesione * (1.0 / static_cast<double>(count));
-    coesione = centro - posizione;
-  }
-
-  velocità = velocità + separazione * s + allineamento * a + coesione * c;
-
-  double vmax = 2.0;
-  if (velocità.modulo() > vmax) {
-    velocità = velocità.normalizzato() * vmax;
-  }
-
-  posizione = posizione + velocità * dt;
-
-  // Gestione ai bordi dello schermo:
-  if (posizione.x < 0) posizione.x = width;
-  if (posizione.x > width) posizione.x = 0;
-  if (posizione.y < 0) posizione.y = height;
-  if (posizione.y > height) posizione.y = 0;
-}
-
-// Metodi della classe Allboids:
-void Allboids::aggiungiBoid(Boid const& boid) {
-  boids.push_back(boid);
-};  // Aggiunge un nuovo boid al sistema
-const std::vector<Boid>& Allboids::getBoids() const {
-=======
 // Metodi della classe Flock:
 void Flock::aggiungiBoid(Boid const& boid) {
   boids.push_back(boid);
 };  // Aggiunge un nuovo boid al sistema
+void Flock::aggiungiFlock(std::vector<Boid> const& boids) {
+  flocks.push_back(boids);
+}
 const std::vector<Boid>& Flock::getBoids() const {
->>>>>>> master
   return boids;
 }  // Restituisce tutti i boid
 
+const std::vector<std::vector<Boid>>& Flock::getFlocks() const {
+  return flocks;
+}
+
 // Restituisce tutti i boid vicini entro distanza "d" dal boid con indice dato
-<<<<<<< HEAD
-std::vector<Boid> Allboids::boidsVicini(size_t indice, double d) const {
-=======
 std::vector<Boid> Flock::boidsVicini(size_t indice, double d) const {
->>>>>>> master
   std::vector<Boid> vicini;
   const Boid& boid = boids[indice];
   for (size_t i = 0; i < boids.size(); ++i) {
@@ -123,11 +63,7 @@ std::vector<Boid> Flock::boidsVicini(size_t indice, double d) const {
 };
 
 // Restituisce i boid troppo vicini (entro distanza ds)
-<<<<<<< HEAD
-std::vector<Boid> Allboids::viciniDS(size_t indice, double ds) const {
-=======
 std::vector<Boid> Flock::viciniDS(size_t indice, double ds) const {
->>>>>>> master
   std::vector<Boid> vicinids;
   const Boid& boid = boids[indice];
   for (size_t i = 0; i < boids.size(); ++i) {
@@ -138,17 +74,23 @@ std::vector<Boid> Flock::viciniDS(size_t indice, double ds) const {
       }
     }
   }
+  
+  for (int j = 0; j < flocks.size(); ++j) {
+    const std::vector<Boid>& flock = flocks[j];
+    for (size_t i = 0; i < flock.size(); ++i) {
+        double distanza = (boids[i].posizione - boid.posizione).modulo();
+        if (distanza < ds && distanza > 0) {  // TEST DISTANZA
+          vicinids.push_back(boids[i]);
+        }
+      }
+    }
+  
   return vicinids;
 }
 
 // Calcolo del vettore separazione (evita collisioni)
-<<<<<<< HEAD
-vettore Allboids::separazione(Boid const& boid,
-                              const std::vector<Boid>& vicinids, double s) {
-=======
 vettore Flock::separazione(Boid const& boid, const std::vector<Boid>& vicinids,
                            double s) {
->>>>>>> master
   vettore somma{0.0, 0.0};
   for (const auto& b : vicinids) {
     vettore diff = boid.posizione - b.posizione;
@@ -161,13 +103,8 @@ vettore Flock::separazione(Boid const& boid, const std::vector<Boid>& vicinids,
 }
 
 // Calcolo del vettore allineamento (uniformità direzione)
-<<<<<<< HEAD
-vettore Allboids::allineamento(Boid const& boid,
-                               const std::vector<Boid>& boidsVicini, double a) {
-=======
 vettore Flock::allineamento(Boid const& boid,
                             const std::vector<Boid>& boidsVicini, double a) {
->>>>>>> master
   if (boidsVicini.empty()) return {0.0, 0.0};
   vettore sommaVel{0.0, 0.0};
   for (auto& b : boidsVicini) {
@@ -179,13 +116,8 @@ vettore Flock::allineamento(Boid const& boid,
 }
 
 // Calcolo del vettore coesione (muoversi verso il centro dei vicini)
-<<<<<<< HEAD
-vettore Allboids::coesione(Boid const& boid,
-                           const std::vector<Boid>& boidsVicini, double c) {
-=======
 vettore Flock::coesione(Boid const& boid, const std::vector<Boid>& boidsVicini,
                         double c) {
->>>>>>> master
   if (boidsVicini.empty()) {
     return {0.0, 0.0};
   }
@@ -200,47 +132,33 @@ vettore Flock::coesione(Boid const& boid, const std::vector<Boid>& boidsVicini,
 }
 
 // Aggiorna velocità e posizione di tutti i boid nel sistema
-<<<<<<< HEAD
-void Allboids::aggiornaBoids(double d, double ds, double s, double a,
-                             double c) {
-  std::vector<vettore> nuoveVelocità(boids.size());
-  maxVel = 2.0;
-=======
 void Flock::aggiornaBoids(double d, double ds, double s, double a, double c,
                           double width, double height) {
   maxVel = 2.0;
+  
+    for (size_t i = 0; i < boids.size(); ++i) {
+      const Boid& boid = boids[i];
+      std::vector<Boid> vicini = boidsVicini(i, d);
+      std::vector<Boid> vicinids = viciniDS(i, ds);
 
->>>>>>> master
-  for (size_t i = 0; i < boids.size(); ++i) {
-    const Boid& boid = boids[i];
-    std::vector<Boid> vicini = boidsVicini(i, d);
-    std::vector<Boid> vicinids = viciniDS(i, ds);
+      vettore v1 = separazione(boid, vicinids, s);
+      vettore v2 = allineamento(boid, vicini, a);
+      vettore v3 = coesione(boid, vicini, c);
 
-    vettore v1 = separazione(boid, vicinids, s);
-    vettore v2 = allineamento(boid, vicini, a);
-    vettore v3 = coesione(boid, vicini, c);
+      vettore nuovaVel = boid.velocità + v1 + v2 + v3;
+      double modulo = nuovaVel.modulo();
+      if (modulo > maxVel) {
+        nuovaVel = nuovaVel * (maxVel / modulo);
+      }
+      boids[i].velocità = nuovaVel;
+      boids[i].posizione = boids[i].posizione + boids[i].velocità * dt;
 
-    vettore nuovaVel = boid.velocità + v1 + v2 + v3;
-    double modulo = nuovaVel.modulo();
-    if (modulo > maxVel) {
-      nuovaVel = nuovaVel * (maxVel / modulo);
+      // Gestione ai bordi dello schermo:
+      if (boids[i].posizione.x < 0) boids[i].posizione.x = width;
+      if (boids[i].posizione.x > width) boids[i].posizione.x = 0;
+      if (boids[i].posizione.y < 0) boids[i].posizione.y = height;
+      if (boids[i].posizione.y > height) boids[i].posizione.y = 0;
     }
-<<<<<<< HEAD
-    nuoveVelocità[i] = nuovaVel;
-  }
-  for (size_t i = 0; i < boids.size(); ++i) {
-    boids[i].velocità = nuoveVelocità[i];
-    boids[i].posizione = boids[i].posizione + boids[i].velocità * deltaTempo;
-=======
-    boids[i].velocità = nuovaVel;
-    boids[i].posizione = boids[i].posizione + boids[i].velocità * dt;
-
-    // Gestione ai bordi dello schermo:
-    if (boids[i].posizione.x < 0) boids[i].posizione.x = width;
-    if (boids[i].posizione.x > width) boids[i].posizione.x = 0;
-    if (boids[i].posizione.y < 0) boids[i].posizione.y = height;
-    if (boids[i].posizione.y > height) boids[i].posizione.y = 0;
->>>>>>> master
-  }
+  
 }
 };  // namespace b
