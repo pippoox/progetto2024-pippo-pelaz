@@ -12,7 +12,7 @@ using namespace b;
 int main() {  
   const double width = 800;
   const double height = 600; 
-  const double dt = 1.;
+  const double dt = 0.5;
 
   auto cfg = b::readConfig();
   auto sim = b::buildSimulation(cfg, width, height);

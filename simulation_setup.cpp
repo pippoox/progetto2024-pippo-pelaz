@@ -10,24 +10,27 @@ namespace b {
 
 simConfig readConfig() {
   simConfig cfg;
+  int input;
 
   std::cout << "Inserisci N(int):\n";
-  std::cin >> cfg.N;
+  std::cin >> input;
   if (std::cin.fail()) {
     throw std::runtime_error("Errore: non hai inserito il tipo corretto!");
   }
-  if (cfg.N < 0) {
+  if (input < 0) {
     throw std::runtime_error("Errore: inserisci un numero positivo");
   }
+  cfg.N = static_cast<size_t>(input);
 
   std::cout << "Inserisci NF(int):\n";
-  std::cin >> cfg.NF;
+  std::cin >> input;
   if (std::cin.fail()) {
     throw std::runtime_error("Errore: non hai inserito il tipo corretto!");
   }
-  if (cfg.NF < 0) {
+  if (input < 0) {
     throw std::runtime_error("Errore: inserisci un numero positivo");
   }
+  cfg.NF = static_cast<size_t>(input);
   if (cfg.N < cfg.NF) {
     throw std::runtime_error(
         "Errore: il numero di flock deve essere minore di quello dei boid "
@@ -35,7 +38,7 @@ simConfig readConfig() {
   }
 
   cfg.flocks.reserve(cfg.NF);
-  for (int i = 0; i < cfg.NF; ++i) {
+  for (size_t i = 0; i < static_cast<size_t>(cfg.NF); ++i) {
     double d;
     double ds;
     double s;
@@ -51,11 +54,11 @@ simConfig readConfig() {
   }
 
   cfg.count.assign(cfg.NF, 0);
-  int sum = 0;
+  size_t sum = 0;
   if (cfg.NF > 1) {
-    for (int i = 0; i < cfg.NF - 1; ++i) {
-      int remaining = cfg.NF - i - 1; 
-      int max = cfg.N - sum - remaining; // Numero di boid massimo affinchè i flock rimanenti
+    for (size_t i = 0; i < static_cast<size_t>(cfg.NF) - 1; ++i) {
+      size_t remaining = cfg.NF - i - 1; 
+      size_t max = cfg.N - sum - remaining; // Numero di boid massimo affinchè i flock rimanenti
       // contengano almeno un boid.
       std::cout << "Inserisci boid nel flock" << i << "(min 1, max " << max
                 << "):\n";
@@ -97,16 +100,16 @@ BoidSimulation buildSimulation(const simConfig& cfg, const double& width, const 
   std::vector<int> labels; // Vettore che contiene gli int che identificano a quale flock 
   //appartiene un boid
   labels.reserve(cfg.N);
-  for (int fid = 0; fid < cfg.NF; ++fid) {
-    for (int k = 0; k < cfg.count[fid]; ++k) {
-      labels.push_back(fid);
+  for (size_t fid = 0; fid < cfg.NF; ++fid) {
+    for (size_t k = 0; k < cfg.count[fid]; ++k) {
+      labels.push_back(static_cast<int>(fid));
     };
   }
 
   std::shuffle(labels.begin(), labels.end(), gen); // Rimescola in maniera casuale i flockid 
   // dentro labels
 
-  for (int i = 0; i < cfg.N; ++i) {
+  for (size_t i = 0; i < cfg.N; ++i) {
     b::Vector pos{posxDist(gen), posyDist(gen)};
     b::Vector vel{speed.x, speed.y};
     sim.addBoids(b::Boid(pos, vel, labels[i]));

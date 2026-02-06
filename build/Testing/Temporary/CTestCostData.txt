@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-boids.t 25 0.00272119
-boids.test.cpp 0 0
-=======
-boids.t 8 0.0011442
->>>>>>> master
+boids.t 2 0.008709
 ---

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# Install script for directory: /home/righif5/progetto2024-pippo-pelaz
-=======
 # Install script for directory: /home/righif5/progetto2024-righi-zauli
->>>>>>> master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -54,9 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
-file(WRITE "/home/righif5/progetto2024-pippo-pelaz/build/${CMAKE_INSTALL_MANIFEST}"
-=======
 file(WRITE "/home/righif5/progetto2024-righi-zauli/build/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> master
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
