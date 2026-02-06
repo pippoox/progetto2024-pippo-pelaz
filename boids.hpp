@@ -6,7 +6,6 @@
 #include <vector>
 
 namespace b {
-constexpr double maxVel = 6.0;
 
 // Struct Vector: rappresenta un vettore 2D con operazioni di base: somma, differenza,
 // prodotto per scalare, modulo e normalizzazione.
@@ -30,8 +29,6 @@ class Boid {
   int flockid;
   Boid(Vector pos, Vector vel, int id)
       : position(pos), velocity(vel), flockid(id) {}
-  void updatePosition(double dt);
-  void updateVelocity(Vector const& v1, Vector const& v2, Vector const& v3);
 };
 
 // Struct Flock: contiene i parametri caratteristici per l'applicazione delle
@@ -43,10 +40,13 @@ struct Flock {
   double s;   // Peso della separation
   double a;   // Peso dell'alignment
   double c;   // Peso della cohesion
+  
+  double maxSpeed;
+  double minSpeed;
 
-  Flock(const int& id_, const double& d_, const double& ds_, const double& s_,
-        const double& a_, const double& c_)
-      : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_} {};
+  Flock(int id_, double d_, double ds_, double s_,
+        double a_, double c_, double maxS_, double minS_)
+      : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_}, maxSpeed{maxS_}, minSpeed{minS_} {};
 };
 
 // Classe BoidSimulation: rappresenta un insieme di boid che possono appartenere a stormi differenti. 
