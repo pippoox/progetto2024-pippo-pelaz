@@ -20,15 +20,15 @@ struct Vector {
   Vector norm() const;
 }; 
 
-// Classe Boid: rappresenta un singolo boid con position, velocity e numero che
+// Classe Boid: rappresenta un singolo boid con position, speed e numero che
 // identifica lo stormo a cui appartiene. Include metodi per aggiornare posizioni e velocità.
 class Boid {
  public:
   Vector position;
-  Vector velocity;
+  Vector speed;
   int flockid;
   Boid(Vector pos, Vector vel, int id)
-      : position(pos), velocity(vel), flockid(id) {}
+      : position(pos), speed(vel), flockid(id) {}
 };
 
 // Struct Flock: contiene i parametri caratteristici per l'applicazione delle

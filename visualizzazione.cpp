@@ -36,7 +36,7 @@ void SimulationRenderer::drawBoids(const std::vector<Boid>& boids,
     boidShape.setFillColor(colore);
 
     const auto& pos = boid.position;
-    const auto& vel = boid.velocity;
+    const auto& vel = boid.speed;
 
     // Calcola l'angolo in radianti (atan2(y, x))
     double angleRad = std::atan2(vel.y, vel.x);

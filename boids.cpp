@@ -2,12 +2,8 @@
 
 namespace b {
 
-Vector Vector::operator+(Vector const& v) const {
-  return {x + v.x, y + v.y};
-}
-Vector Vector::operator-(Vector const& v) const {
-  return {x - v.x, y - v.y};
-}
+Vector Vector::operator+(Vector const& v) const { return {x + v.x, y + v.y}; }
+Vector Vector::operator-(Vector const& v) const { return {x - v.x, y - v.y}; }
 Vector Vector::operator*(double a) const { return {x * a, y * a}; }
 double Vector::lenght() const { return std::sqrt(x * x + y * y); }
 Vector Vector::norm() const {
@@ -18,34 +14,14 @@ Vector Vector::norm() const {
     return {0.0, 0.0};
 }
 
-// Metodi della classe Boid:
-
-void Boid::updatePosition(double dt) { position = position + velocity * dt; };
-
-void Boid::updateVelocity(Vector const& v1, Vector const& v2,
-                         Vector const& v3) {
-  velocity = velocity + v1 + v2 + v3;
-  if (velocity.lenght() > maxVel) {
-    velocity = velocity.norm() * maxVel;
-  }
-}
-
 // Metodi della classe BoidSistem:
-void BoidSimulation::addBoids(Boid const& boid) {
-  boids.push_back(boid);
-}; 
+void BoidSimulation::addBoids(Boid const& boid) { boids.push_back(boid); };
 
-const std::vector<Boid>& BoidSimulation::getBoids() const {
-  return boids;
-}  
+const std::vector<Boid>& BoidSimulation::getBoids() const { return boids; }
 
-const double& BoidSimulation::getWidth() const {
-  return width;
-}
+const double& BoidSimulation::getWidth() const { return width; }
 
-const double& BoidSimulation::getHeight() const {
-  return height; 
-}
+const double& BoidSimulation::getHeight() const { return height; }
 
 std::vector<size_t> BoidSimulation::getNeighbors(size_t i, double d) const {
   std::vector<size_t> neighbors;
@@ -62,7 +38,8 @@ std::vector<size_t> BoidSimulation::getNeighbors(size_t i, double d) const {
   return neighbors;
 }
 
-std::vector<size_t> BoidSimulation::getNeighborsDS(size_t indice, double ds) const {
+std::vector<size_t> BoidSimulation::getNeighborsDS(size_t indice,
+                                                   double ds) const {
   std::vector<size_t> neighborsDS;
   const Boid& boid = boids[indice];
   for (size_t i = 0; i < boids.size(); ++i) {
@@ -77,8 +54,8 @@ std::vector<size_t> BoidSimulation::getNeighborsDS(size_t indice, double ds) con
 }
 
 Vector BoidSimulation::separation(size_t i,
-                                    const std::vector<size_t>& neighborsDS,
-                                    double s) {
+                                  const std::vector<size_t>& neighborsDS,
+                                  double s) {
   if (neighborsDS.empty()) return {0.0, 0.0};
   Vector sum{0.0, 0.0};
   for (size_t j : neighborsDS) {
@@ -92,21 +69,22 @@ Vector BoidSimulation::separation(size_t i,
 }
 
 Vector BoidSimulation::alignment(size_t i,
-                                     const std::vector<size_t>& getNeighbors,
-                                     double a) {
+                                 const std::vector<size_t>& getNeighbors,
+                                 double a) {
   if (getNeighbors.empty()) return {0.0, 0.0};
   Vector velocitySum{0.0, 0.0};
   for (size_t j : getNeighbors) {
-    velocitySum = velocitySum + boids[j].velocity;
+    velocitySum = velocitySum + boids[j].speed;
   }
-  Vector mediaVel = velocitySum * (1.0 / static_cast<double>(getNeighbors.size()));
-  Vector diff = mediaVel - boids[i].velocity;
+  Vector mediaVel =
+      velocitySum * (1.0 / static_cast<double>(getNeighbors.size()));
+  Vector diff = mediaVel - boids[i].speed;
   return diff * a;
 }
 
 Vector BoidSimulation::cohesion(size_t i,
-                                 const std::vector<size_t>& getNeighbors,
-                                 double c) {
+                                const std::vector<size_t>& getNeighbors,
+                                double c) {
   if (getNeighbors.empty()) {
     return {0.0, 0.0};
   }
@@ -134,11 +112,17 @@ void BoidSimulation::updateBoids(double dt) {
     Vector v2 = alignment(i, neighbors, f.a);
     Vector v3 = cohesion(i, neighbors, f.c);
 
-    Vector vel = boid.velocity + (v1 + v2 + v3) * dt;
-    double lenght = vel.lenght();
-    if (lenght > maxVel) {
-      vel = vel * (maxVel / lenght);
+    Vector vel = boid.speed + (v1 + v2 + v3) * dt;
+    double len = vel.lenght();
+    if (len > 0.0) {
+      if (len > f.maxSpeed)
+        vel = vel * (f.maxSpeed / len);
+      else if (len < f.minSpeed)
+        vel = vel * (f.minSpeed / len);
+    } else {
+      vel = {f.minSpeed, 0.0};
     }
+
     Vector pos = boid.position + vel * dt;
 
     // Gestione ai bordi dello schermo:
@@ -151,7 +135,7 @@ void BoidSimulation::updateBoids(double dt) {
     newPosition[i] = pos;
   }
   for (size_t i = 0; i < boids.size(); ++i) {
-    boids[i].velocity = newVelocity[i];
+    boids[i].speed = newVelocity[i];
     boids[i].position = newPosition[i];
   }
 }
