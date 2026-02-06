@@ -72,11 +72,7 @@ build boids.t: phony Release/boids.t
 
 
 #############################################
-<<<<<<< HEAD
-# Folder: /home/righif5/progetto2024-pippo-pelaz/build
-=======
 # Folder: /home/righif5/progetto2024-righi-zauli/build
->>>>>>> master
 
 build all: phony all$:Release
 

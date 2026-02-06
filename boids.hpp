@@ -44,9 +44,15 @@ struct Flock {
   double maxSpeed;
   double minSpeed;
 
+<<<<<<< HEAD
   Flock(int id_, double d_, double ds_, double s_,
         double a_, double c_, double maxS_, double minS_)
       : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_}, maxSpeed{maxS_}, minSpeed{minS_} {};
+=======
+  Flock(const int& id_, const double& d_, const double& ds_, const double& s_,
+        const double& a_, const double& c_)
+      : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_} {}
+>>>>>>> 96b4b6d35e21c07ff05948a3f7f8f745228d7706
 };
 
 // Classe BoidSimulation: rappresenta un insieme di boid che possono appartenere a stormi differenti. 
@@ -61,7 +67,7 @@ class BoidSimulation {
   const double height; 
  public:
   BoidSimulation(const std::vector<Flock>& flocks_, const double& width_, const double& height_)
-      :flocks(flocks_), width(width_), height(height_) {};
+      :flocks(flocks_), width(width_), height(height_) {}
   const std::vector<Boid>& getBoids() const;
   const double& getWidth() const;
   const double& getHeight() const;

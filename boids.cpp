@@ -104,7 +104,7 @@ void BoidSimulation::updateBoids(double dt) {
 
   for (size_t i = 0; i < boids.size(); ++i) {
     const Boid& boid = boids[i];
-    const Flock& f = flocks[boid.flockid];
+    const Flock& f = flocks[static_cast<std::size_t>(boid.flockid)];
     std::vector<size_t> neighbors = getNeighbors(i, f.d);
     std::vector<size_t> neighborsDS = getNeighborsDS(i, f.ds);
 

@@ -211,24 +211,23 @@ build ContinuousSubmit$:RelWithDebInfo: phony CMakeFiles/ContinuousSubmit-RelWit
 
 build cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO: phony || CMakeFiles/boids.sim.dir
 
-<<<<<<< HEAD
-build CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/main.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
-=======
 build CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/main.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
->>>>>>> master
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
 
-<<<<<<< HEAD
-build CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/boids.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
-=======
 build CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
->>>>>>> master
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
+
+build CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
@@ -241,7 +240,7 @@ build CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2
 #############################################
 # Link the executable RelWithDebInfo/boids.sim
 
-build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInfo CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o
+build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInfo CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
   POST_BUILD = :
@@ -258,35 +257,30 @@ build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInf
 
 build cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO: phony || CMakeFiles/boids.sfml.dir
 
-<<<<<<< HEAD
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/main.grafica.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
-=======
 build CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/main.grafica.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
->>>>>>> master
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
 
-<<<<<<< HEAD
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/visualizzazione.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
-=======
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
->>>>>>> master
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
 
-<<<<<<< HEAD
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/boids.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
-=======
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
->>>>>>> master
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
+
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
@@ -299,7 +293,7 @@ build CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.
 #############################################
 # Link the executable RelWithDebInfo/boids.sfml
 
-build RelWithDebInfo/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_RelWithDebInfo CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build RelWithDebInfo/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_RelWithDebInfo CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
@@ -317,24 +311,23 @@ build RelWithDebInfo/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_RelWithDebI
 
 build cmake_object_order_depends_target_boids.t_RELWITHDEBINFO: phony || CMakeFiles/boids.t.dir
 
-<<<<<<< HEAD
-build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/boids.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
-=======
 build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
->>>>>>> master
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
 
-<<<<<<< HEAD
-build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-pippo-pelaz/boids.test.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
-=======
 build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.test.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
->>>>>>> master
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
+
+build CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
@@ -347,7 +340,7 @@ build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o: CXX_COMPILER__boid
 #############################################
 # Link the executable RelWithDebInfo/boids.t
 
-build RelWithDebInfo/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_RelWithDebInfo CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o
+build RelWithDebInfo/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_RelWithDebInfo CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   POST_BUILD = :
@@ -360,11 +353,7 @@ build RelWithDebInfo/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_RelWithDebInfo CM
 # Custom command for CMakeFiles/Experimental-RelWithDebInfo
 
 build CMakeFiles/Experimental-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/Experimental-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D Experimental
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D Experimental
->>>>>>> master
   pool = console
 
 
@@ -372,11 +361,7 @@ build CMakeFiles/Experimental-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/
 # Custom command for CMakeFiles/Nightly-RelWithDebInfo
 
 build CMakeFiles/Nightly-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/Nightly-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D Nightly
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D Nightly
->>>>>>> master
   pool = console
 
 
@@ -384,11 +369,7 @@ build CMakeFiles/Nightly-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/Night
 # Custom command for CMakeFiles/Continuous-RelWithDebInfo
 
 build CMakeFiles/Continuous-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/Continuous-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D Continuous
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D Continuous
->>>>>>> master
   pool = console
 
 
@@ -396,11 +377,7 @@ build CMakeFiles/Continuous-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/Co
 # Custom command for CMakeFiles/NightlyMemoryCheck-RelWithDebInfo
 
 build CMakeFiles/NightlyMemoryCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyMemoryCheck-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyMemoryCheck
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyMemoryCheck
->>>>>>> master
   pool = console
 
 
@@ -408,11 +385,7 @@ build CMakeFiles/NightlyMemoryCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMake
 # Custom command for CMakeFiles/NightlyStart-RelWithDebInfo
 
 build CMakeFiles/NightlyStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyStart-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyStart
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyStart
->>>>>>> master
   pool = console
 
 
@@ -420,11 +393,7 @@ build CMakeFiles/NightlyStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/
 # Custom command for CMakeFiles/NightlyUpdate-RelWithDebInfo
 
 build CMakeFiles/NightlyUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyUpdate-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyUpdate
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyUpdate
->>>>>>> master
   pool = console
 
 
@@ -432,11 +401,7 @@ build CMakeFiles/NightlyUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles
 # Custom command for CMakeFiles/NightlyConfigure-RelWithDebInfo
 
 build CMakeFiles/NightlyConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyConfigure-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyConfigure
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyConfigure
->>>>>>> master
   pool = console
 
 
@@ -444,11 +409,7 @@ build CMakeFiles/NightlyConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFi
 # Custom command for CMakeFiles/NightlyBuild-RelWithDebInfo
 
 build CMakeFiles/NightlyBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyBuild-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyBuild
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyBuild
->>>>>>> master
   pool = console
 
 
@@ -456,11 +417,7 @@ build CMakeFiles/NightlyBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/
 # Custom command for CMakeFiles/NightlyTest-RelWithDebInfo
 
 build CMakeFiles/NightlyTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyTest-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyTest
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyTest
->>>>>>> master
   pool = console
 
 
@@ -468,11 +425,7 @@ build CMakeFiles/NightlyTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/N
 # Custom command for CMakeFiles/NightlyCoverage-RelWithDebInfo
 
 build CMakeFiles/NightlyCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyCoverage-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyCoverage
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyCoverage
->>>>>>> master
   pool = console
 
 
@@ -480,11 +433,7 @@ build CMakeFiles/NightlyCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFil
 # Custom command for CMakeFiles/NightlyMemCheck-RelWithDebInfo
 
 build CMakeFiles/NightlyMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlyMemCheck-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyMemCheck
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlyMemCheck
->>>>>>> master
   pool = console
 
 
@@ -492,11 +441,7 @@ build CMakeFiles/NightlyMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFil
 # Custom command for CMakeFiles/NightlySubmit-RelWithDebInfo
 
 build CMakeFiles/NightlySubmit-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/NightlySubmit-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlySubmit
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D NightlySubmit
->>>>>>> master
   pool = console
 
 
@@ -504,11 +449,7 @@ build CMakeFiles/NightlySubmit-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles
 # Custom command for CMakeFiles/ExperimentalStart-RelWithDebInfo
 
 build CMakeFiles/ExperimentalStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalStart-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalStart
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalStart
->>>>>>> master
   pool = console
 
 
@@ -516,11 +457,7 @@ build CMakeFiles/ExperimentalStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeF
 # Custom command for CMakeFiles/ExperimentalUpdate-RelWithDebInfo
 
 build CMakeFiles/ExperimentalUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalUpdate-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalUpdate
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalUpdate
->>>>>>> master
   pool = console
 
 
@@ -528,11 +465,7 @@ build CMakeFiles/ExperimentalUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMake
 # Custom command for CMakeFiles/ExperimentalConfigure-RelWithDebInfo
 
 build CMakeFiles/ExperimentalConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalConfigure-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalConfigure
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalConfigure
->>>>>>> master
   pool = console
 
 
@@ -540,11 +473,7 @@ build CMakeFiles/ExperimentalConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CM
 # Custom command for CMakeFiles/ExperimentalBuild-RelWithDebInfo
 
 build CMakeFiles/ExperimentalBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalBuild-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalBuild
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalBuild
->>>>>>> master
   pool = console
 
 
@@ -552,11 +481,7 @@ build CMakeFiles/ExperimentalBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeF
 # Custom command for CMakeFiles/ExperimentalTest-RelWithDebInfo
 
 build CMakeFiles/ExperimentalTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalTest-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalTest
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalTest
->>>>>>> master
   pool = console
 
 
@@ -564,11 +489,7 @@ build CMakeFiles/ExperimentalTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFi
 # Custom command for CMakeFiles/ExperimentalCoverage-RelWithDebInfo
 
 build CMakeFiles/ExperimentalCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalCoverage-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalCoverage
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalCoverage
->>>>>>> master
   pool = console
 
 
@@ -576,11 +497,7 @@ build CMakeFiles/ExperimentalCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMa
 # Custom command for CMakeFiles/ExperimentalMemCheck-RelWithDebInfo
 
 build CMakeFiles/ExperimentalMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalMemCheck-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalMemCheck
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalMemCheck
->>>>>>> master
   pool = console
 
 
@@ -588,11 +505,7 @@ build CMakeFiles/ExperimentalMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMa
 # Custom command for CMakeFiles/ExperimentalSubmit-RelWithDebInfo
 
 build CMakeFiles/ExperimentalSubmit-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ExperimentalSubmit-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalSubmit
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ExperimentalSubmit
->>>>>>> master
   pool = console
 
 
@@ -600,11 +513,7 @@ build CMakeFiles/ExperimentalSubmit-RelWithDebInfo | ${cmake_ninja_workdir}CMake
 # Custom command for CMakeFiles/ContinuousStart-RelWithDebInfo
 
 build CMakeFiles/ContinuousStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousStart-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousStart
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousStart
->>>>>>> master
   pool = console
 
 
@@ -612,11 +521,7 @@ build CMakeFiles/ContinuousStart-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFil
 # Custom command for CMakeFiles/ContinuousUpdate-RelWithDebInfo
 
 build CMakeFiles/ContinuousUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousUpdate-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousUpdate
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousUpdate
->>>>>>> master
   pool = console
 
 
@@ -624,11 +529,7 @@ build CMakeFiles/ContinuousUpdate-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFi
 # Custom command for CMakeFiles/ContinuousConfigure-RelWithDebInfo
 
 build CMakeFiles/ContinuousConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousConfigure-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousConfigure
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousConfigure
->>>>>>> master
   pool = console
 
 
@@ -636,11 +537,7 @@ build CMakeFiles/ContinuousConfigure-RelWithDebInfo | ${cmake_ninja_workdir}CMak
 # Custom command for CMakeFiles/ContinuousBuild-RelWithDebInfo
 
 build CMakeFiles/ContinuousBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousBuild-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousBuild
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousBuild
->>>>>>> master
   pool = console
 
 
@@ -648,11 +545,7 @@ build CMakeFiles/ContinuousBuild-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFil
 # Custom command for CMakeFiles/ContinuousTest-RelWithDebInfo
 
 build CMakeFiles/ContinuousTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousTest-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousTest
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousTest
->>>>>>> master
   pool = console
 
 
@@ -660,11 +553,7 @@ build CMakeFiles/ContinuousTest-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFile
 # Custom command for CMakeFiles/ContinuousCoverage-RelWithDebInfo
 
 build CMakeFiles/ContinuousCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousCoverage-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousCoverage
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousCoverage
->>>>>>> master
   pool = console
 
 
@@ -672,11 +561,7 @@ build CMakeFiles/ContinuousCoverage-RelWithDebInfo | ${cmake_ninja_workdir}CMake
 # Custom command for CMakeFiles/ContinuousMemCheck-RelWithDebInfo
 
 build CMakeFiles/ContinuousMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousMemCheck-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousMemCheck
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousMemCheck
->>>>>>> master
   pool = console
 
 
@@ -684,11 +569,7 @@ build CMakeFiles/ContinuousMemCheck-RelWithDebInfo | ${cmake_ninja_workdir}CMake
 # Custom command for CMakeFiles/ContinuousSubmit-RelWithDebInfo
 
 build CMakeFiles/ContinuousSubmit-RelWithDebInfo | ${cmake_ninja_workdir}CMakeFiles/ContinuousSubmit-RelWithDebInfo: CUSTOM_COMMAND
-<<<<<<< HEAD
-  COMMAND = cd /home/righif5/progetto2024-pippo-pelaz/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousSubmit
-=======
   COMMAND = cd /home/righif5/progetto2024-righi-zauli/build && /usr/bin/ctest -C ${CONFIGURATION} -D ContinuousSubmit
->>>>>>> master
   pool = console
 
 build boids.sfml$:RelWithDebInfo: phony RelWithDebInfo/boids.sfml
@@ -699,11 +580,7 @@ build boids.t$:RelWithDebInfo: phony RelWithDebInfo/boids.t
 
 
 #############################################
-<<<<<<< HEAD
-# Folder: /home/righif5/progetto2024-pippo-pelaz/build
-=======
 # Folder: /home/righif5/progetto2024-righi-zauli/build
->>>>>>> master
 
 build all$:RelWithDebInfo: phony RelWithDebInfo/boids.sim RelWithDebInfo/boids.sfml RelWithDebInfo/boids.t
 
