@@ -1,15 +1,15 @@
 #include "visualizzazione.hpp"
-#include "boids.hpp"
 
 #include <cmath>
 
+#include "boids.hpp"
+
 namespace b {
-// Costruttore della classe Visualizzazione
+// Costruttore della classe SimulationRenderer
 // Imposta le dimensioni della finestra
 const double pi = 3.14159265359;
 
-Visualizzazione::Visualizzazione(unsigned int width, unsigned int height)
-    : windowWidth(width), windowHeight(height) {
+SimulationRenderer::SimulationRenderer() {
   boidShape.setPointCount(3);
   const double size = 10.;
   const double width_boid = 5.;
@@ -19,52 +19,44 @@ Visualizzazione::Visualizzazione(unsigned int width, unsigned int height)
   boidShape.setPoint(2, sf::Vector2f(-width_boid / 2., size / 2.));
 
   boidShape.setOrigin(0., 0.);
-  
 }
 
 static const std::vector<sf::Color> flockColors = {
-  sf::Color::Green,
-  sf::Color::Red,
-  sf::Color::Blue,
-  sf::Color::Yellow,
-  sf::Color::Magenta,
-  sf::Color::Cyan
-};
+    sf::Color::Green,  sf::Color::Red,     sf::Color::Blue,
+    sf::Color::Yellow, sf::Color::Magenta, sf::Color::Cyan};
 
 // Metodo per disegnare i boid
 
-void Visualizzazione::disegnaBoids(const std::vector<std::vector<Boid>>& flocks,
+void SimulationRenderer::drawBoids(const std::vector<Boid>& boids,
                                    sf::RenderWindow& window) {
-
-  for (int j = 0; j < flocks.size(); ++j) {
-
-    sf::Color colore = flockColors[j % flockColors.size()];
+  for (const auto& boid : boids) {
+    int fid = boid.flockid;
+    sf::Color colore =
+        flockColors[static_cast<size_t>(fid) % flockColors.size()];
     boidShape.setFillColor(colore);
 
-  for (const auto& boid : flocks[j]) {
-    double vx = static_cast<double>(boid.velocità.x);
-    double vy = static_cast<double>(boid.velocità.y);
-    double px = static_cast<double>(boid.posizione.x);
-    double py = static_cast<double>(boid.posizione.y);
+    const auto& pos = boid.position;
+    const auto& vel = boid.velocity;
 
     // Calcola l'angolo in radianti (atan2(y, x))
-    double angleRad = std::atan2(vy, vx);
+    double angleRad = std::atan2(vel.y, vel.x);
 
     // Converte i radianti in gradi
     double angleDeg = angleRad * (180. / pi);
-    
-    // Applica la correzione di +90 gradi. 
+
+    // Applica la correzione di +90 gradi.
     // CiÃ² compensa il fatto che atan2 misura da +X (destra)
     // mentre il nostro triangolo a 0 gradi punta verso -Y (alto).
-    double rotation = angleDeg + 90.; 
+    double rotation = angleDeg + 90.;
 
-    // 1. Applica la posizione
-    boidShape.setPosition(px, py);
+    // 1. Applica la position
+    boidShape.setPosition(static_cast<float>(pos.x),
+                          static_cast<float>(pos.y));
     // 2. Applica la rotazione
-    boidShape.setRotation(rotation);
-   
+    boidShape.setRotation(static_cast<float>(rotation));
+
     window.draw(boidShape);
   }
-}
-}
+};
 }  // namespace b
+// namespace b

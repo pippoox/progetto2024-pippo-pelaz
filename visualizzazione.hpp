@@ -5,21 +5,18 @@
 
 #include "boids.hpp"
 namespace b {
-// Classe Visualizzazione
-// Scopo: gestisce il rendering dei boid in una finestra SFML
+// Classe SimulationRenderer: gestisce il rendering dei boid in una finestra SFML
 // - windowWidth e windowHeight: dimensioni della finestra
-// - disegnaBoids: disegna i boid dati in input (posizioni)
-class Visualizzazione {
+// - drawBoids: disegna i boid dati in input (posizioni)
+class SimulationRenderer {
  public:
-  Visualizzazione(unsigned int width, unsigned int height);
+  SimulationRenderer();
 
-  // Disegna i boid usando le loro posizioni
-  void disegnaBoids(const std::vector<std::vector<Boid>>& flocks,
-                    sf::RenderWindow& window);
+  
+  void drawBoids(const std::vector<Boid>& boids ,
+                    sf::RenderWindow& window); // Disegna i boid usando le loro posizioni
 
  private:
-  unsigned int windowWidth;
-  unsigned int windowHeight;
   sf::ConvexShape boidShape;
 };
 }  // namespace b

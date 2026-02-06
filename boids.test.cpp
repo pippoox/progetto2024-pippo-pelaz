@@ -59,16 +59,15 @@ TEST_CASE("Testing Boid implementation") {
   }
   SUBCASE("Testing variazioneVel con v>vmax") {
     b::vettore pos = {0.0, 0.0};
-    b::vettore vel = {1.0, 0.0};
+    b::vettore vel = {2.0, 0.0};
     b::Boid b(pos, vel);
     b::vettore v1 = {0.5, 0.0};
     b::vettore v2 = {0.3, 0.0};
     b::vettore v3 = {0.1, 0.0};
-    double maxVelocità = 1.0;
-    b.variazioneVel(v1, v2, v3, maxVelocità);
-    CHECK(b.velocità.x == doctest::Approx(1.0));
+    b.variazioneVel(v1, v2, v3);
+    CHECK(b.velocità.x == doctest::Approx(2.0));
     CHECK(b.velocità.y == doctest::Approx(0.0));
-    CHECK(b.velocità.modulo() == doctest::Approx(maxVelocità));
+    CHECK(b.velocità.modulo() == doctest::Approx(2.0));
   }
   SUBCASE("Testing variazioneVel con v<vmax") {
     b::vettore pos = {0.0, 0.0};
@@ -77,22 +76,21 @@ TEST_CASE("Testing Boid implementation") {
     b::vettore v1 = {0.1, 0.0};
     b::vettore v2 = {0.1, 0.0};
     b::vettore v3 = {0.1, 0.0};
-    double maxVelocità = 2.0;
-    b.variazioneVel(v1, v2, v3, maxVelocità);
+    b.variazioneVel(v1, v2, v3);
     CHECK(b.velocità.x == doctest::Approx(0.4));
     CHECK(b.velocità.y == doctest::Approx(0.0));
   }
 }
 TEST_CASE("Testing Flock implementation") {
   SUBCASE("Testing boidsVicini") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({5.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({15.0, 0.0}, {0.0, 0.0});
     gruppo.aggiungiBoid(boid1);
     gruppo.aggiungiBoid(boid2);
     gruppo.aggiungiBoid(boid3);
-    
+
     size_t indice = 0;
 
     std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
@@ -100,23 +98,36 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(vicini[0].posizione.x == doctest::Approx(5.0));
   }
   SUBCASE("Testing boidsVicini vuoto") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     gruppo.aggiungiBoid(boid1);
 
-    
-    size_t indice =0;
+    size_t indice = 0;
     std::vector<b::Boid> vicini = gruppo.boidsVicini(indice, 10.0);
     CHECK(vicini.empty());
   }
-  SUBCASE("Testing viciniDS") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+  SUBCASE("Testing viciniDS stesso flock") {
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({3.0, 0.0}, {0.0, 0.0});
-    gruppo.aggiungiBoid(boid1);
-    gruppo.aggiungiBoid(boid2);
-    gruppo.aggiungiBoid(boid3);
+    std::vector<b::Boid> flock1{boid1, boid2, boid3};
+    gruppo.aggiungiFlock(flock1);
+    size_t indice = 0;
+
+    std::vector<b::Boid> vicinids = gruppo.viciniDS(indice, 2.0);
+    CHECK(vicinids.size() == 1);
+    CHECK(vicinids[0].posizione.x == doctest::Approx(1.0));
+  }
+  SUBCASE("Testing viciniDS diverso flock") {
+    b::Flock gruppo(10.0, 0.1);
+    b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
+    b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
+    b::Boid boid3({3.0, 0.0}, {0.0, 0.0});
+    std::vector<b::Boid> flock1{boid1, boid2};
+    std::vector<b::Boid> flock2{boid3};
+    gruppo.aggiungiFlock(flock1);
+    gruppo.aggiungiFlock(flock2);
     size_t indice = 0;
 
     std::vector<b::Boid> vicinids = gruppo.viciniDS(indice, 2.0);
@@ -124,7 +135,7 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(vicinids[0].posizione.x == doctest::Approx(1.0));
   }
   SUBCASE("Testing vettore di separazione") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
     b::Boid boid3({-1.0, 0.0}, {0.0, 0.0});
@@ -136,7 +147,7 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(separazione.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing separazione con un solo vicino") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {0.0, 0.0});
 
@@ -147,7 +158,7 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(separazione.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing vettore allineamento") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {1.0, 0.0});
     b::Boid boid2({1.0, 0.0}, {2.0, 0.0});
     b::Boid boid3({2.0, 0.0}, {3.0, 0.0});
@@ -160,7 +171,7 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(allineamento.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing allineamento con nessun vicino") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {1.0, 0.0});
     std::vector<b::Boid> boidsVicini = {};
     double a = 0.5;
@@ -169,7 +180,7 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(allineamento.y == doctest::Approx(0.0));
   }
   SUBCASE("Testing vettore coesione") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     b::Boid boid2({1.0, 1.0}, {0.0, 0.0});
     b::Boid boid3({-1.0, 1.0}, {0.0, 0.0});
@@ -182,151 +193,153 @@ TEST_CASE("Testing Flock implementation") {
     CHECK(coesione.y == doctest::Approx(0.5));
   }
   SUBCASE("Testing coesione con nessun vicino") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+    b::Flock gruppo(10.0, 0.1);
     b::Boid boid1({0.0, 0.0}, {0.0, 0.0});
     std::vector<b::Boid> boidsVicini = {};
     double c = 0.5;
     b::vettore coesione = gruppo.coesione(boid1, boidsVicini, c);
     CHECK(coesione.x == doctest::Approx(0.0));
     CHECK(coesione.y == doctest::Approx(0.0));
-  }
-  SUBCASE("Testing aggiornaBoids con nessun vicino") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
 
-    b::vettore initial_pos = {0.0, 0.0};
-    b::vettore initial_vel = {1.0, 0.0};
-    gruppo.aggiungiBoid(b::Boid(initial_pos, initial_vel));
+    SUBCASE("Testing aggiornaBoids con nessun vicino") {
+      b::Flock gruppo(10.0, 0.1);
 
-    gruppo.aggiornaBoids(10.0, 1.0, 0.5, 0.5, 0.5);
+      b::vettore pos_i = {0.0, 0.0};
+      b::vettore vel_i = {1.0, 0.0};
+      std::vector<b::Boid> flock1 {b::Boid(pos_i, vel_i)};
+      gruppo.aggiungiFlock(flock1);
 
-    const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
+      gruppo.aggiornaBoids(10.0, 1.0, 0.5, 0.5, 0.5);
 
-    CHECK(updated_boids.size() == 1);
+      const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
 
-    CHECK(updated_boids[0].posizione.x == doctest::Approx(0.1));
-    CHECK(updated_boids[0].posizione.y == doctest::Approx(0.0));
+      CHECK(updated_boids.size() == 1);
 
-    CHECK(updated_boids[0].velocità.x == doctest::Approx(1.0));
-    CHECK(updated_boids[0].velocità.y == doctest::Approx(0.0));
-  }
-  SUBCASE("Testing aggiornaboids con separazione, no a,c") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+      CHECK(updated_boids[0].posizione.x == doctest::Approx(0.1));
+      CHECK(updated_boids[0].posizione.y == doctest::Approx(0.0));
 
-    b::vettore posA = {0.0, 0.0};
-    b::vettore velA = {0.0, 0.0};
-    gruppo.aggiungiBoid(b::Boid(posA, velA));
+      CHECK(updated_boids[0].velocità.x == doctest::Approx(1.0));
+      CHECK(updated_boids[0].velocità.y == doctest::Approx(0.0));
+    }
+    SUBCASE("Testing aggiornaboids con separazione, no a,c") {
+      b::Flock gruppo(10.0, 0.1);
 
-    b::vettore posB = {0.1, 0.0};
-    b::vettore velB = {0.0, 0.0};
-    gruppo.aggiungiBoid(b::Boid(posB, velB));
+      b::vettore posA = {0.0, 0.0};
+      b::vettore velA = {0.0, 0.0};
+      b::vettore posB = {0.1, 0.0};
+      b::vettore velB = {0.0, 0.0};
+      std::vector<b::Boid> flock1 {b::Boid(posA, velA), b::Boid(posB, velB)};
+      gruppo.aggiungiFlock(flock1);
+  
+      double raggioVisuale = 10.0;
+      double raggioSeparazione = 0.5;
+      double fattoreSeparazione = 1.0;
+      double fattoreAllineamento = 0.0;
+      double fattoreCoesione = 0.0;
 
-    double raggioVisuale = 10.0;
-    double raggioSeparazione = 0.5;
-    double fattoreSeparazione = 1.0;
-    double fattoreAllineamento = 0.0;
-    double fattoreCoesione = 0.0;
+      gruppo.aggiornaBoids(raggioVisuale, raggioSeparazione, fattoreSeparazione,
+                           fattoreAllineamento, fattoreCoesione);
 
-    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazione, fattoreSeparazione, fattoreAllineamento,
-                         fattoreCoesione);
+      const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
 
-    const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
+      CHECK(updated_boids.size() == 2);
 
-    CHECK(updated_boids.size() == 2);
+      double nuovaDistanza =
+          (updated_boids[0].posizione - updated_boids[1].posizione).modulo();
+      CHECK(nuovaDistanza > doctest::Approx(0.1));
 
-    double nuovaDistanza =
-        (updated_boids[0].posizione - updated_boids[1].posizione).modulo();
-    CHECK(nuovaDistanza > doctest::Approx(0.1));
+      CHECK(updated_boids[0].velocità.x < doctest::Approx(0.0));
+      CHECK(updated_boids[1].velocità.x > doctest::Approx(0.0));
 
-    CHECK(updated_boids[0].velocità.x < doctest::Approx(0.0));
-    CHECK(updated_boids[1].velocità.x > doctest::Approx(0.0));
+      CHECK(updated_boids[0].velocità.x ==
+            doctest::Approx(-updated_boids[1].velocità.x));
 
-    CHECK(updated_boids[0].velocità.x == doctest::Approx(-updated_boids[1].velocità.x));
+      CHECK(updated_boids[0].posizione.x < doctest::Approx(posA.x));
+      CHECK(updated_boids[1].posizione.x > doctest::Approx(posB.x));
+    }
+    SUBCASE("Testing aggiornaboids con allineamento, no s,c") {
+      b::Flock gruppo(10.0, 0.1);
 
-    CHECK(updated_boids[0].posizione.x < doctest::Approx(posA.x));
-    CHECK(updated_boids[1].posizione.x > doctest::Approx(posB.x));
-  }
-  SUBCASE("Testing aggiornaboids con allineamento, no s,c") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+      b::vettore posA = {0.0, 0.0};
+      b::vettore velA = {1.0, 1.0};
+       b::vettore posB = {1.0, 0.0};
+      b::vettore velB = {-1.0, -1.0};
+      std::vector<b::Boid> flock1 {b::Boid(posA, velA), b::Boid(posB, velB)};
+      gruppo.aggiungiFlock(flock1);
 
-    b::vettore posA = {0.0, 0.0};
-    b::vettore velA = {1.0, 1.0};
-    gruppo.aggiungiBoid(b::Boid(posA, velA));
+      double raggioVisuale = 10.0;
 
-    b::vettore posB = {1.0, 0.0};
-    b::vettore velB = {-1.0, -1.0};
-    gruppo.aggiungiBoid(b::Boid(posB, velB));
-    double raggioVisuale = 10.0;
+      double raggioSeparazioneDS = 0.1;
 
-    double raggioSeparazioneDS = 0.1;
+      double fattoreSeparazione = 0.0;
 
-    double fattoreSeparazione = 0.0;
+      double fattoreAllineamento = 1.0;
 
-    double fattoreAllineamento = 1.0;
+      double fattoreCoesione = 0.0;
 
-    double fattoreCoesione = 0.0;
+      gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS,
+                           fattoreSeparazione, fattoreAllineamento,
+                           fattoreCoesione);
 
-    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS, fattoreSeparazione,
-                        fattoreAllineamento, fattoreCoesione);
+      const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
 
-    const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
+      CHECK(updated_boids.size() == 2);
 
-    CHECK(updated_boids.size() == 2);
+      CHECK(updated_boids[0].velocità.x == doctest::Approx(-1.0));
+      CHECK(updated_boids[0].velocità.y == doctest::Approx(-1.0));
 
-    CHECK(updated_boids[0].velocità.x == doctest::Approx(-1.0));
-    CHECK(updated_boids[0].velocità.y == doctest::Approx(-1.0));
+      CHECK(updated_boids[1].velocità.x == doctest::Approx(1.0));
+      CHECK(updated_boids[1].velocità.y == doctest::Approx(1.0));
 
-    CHECK(updated_boids[1].velocità.x == doctest::Approx(1.0));
-    CHECK(updated_boids[1].velocità.y == doctest::Approx(1.0));
+      CHECK(updated_boids[0].posizione.x ==
+            doctest::Approx(posA.x + updated_boids[0].velocità.x *
+                                         gruppo.getdeltaTempo()));
+      CHECK(updated_boids[0].posizione.y ==
+            doctest::Approx(posA.y + updated_boids[0].velocità.y *
+                                         gruppo.getdeltaTempo()));
 
-    CHECK(updated_boids[0].posizione.x ==
-          doctest::Approx(posA.x +
-                          updated_boids[0].velocità.x * gruppo.getdeltaTempo()));
-    CHECK(updated_boids[0].posizione.y ==
-          doctest::Approx(posA.y +
-                          updated_boids[0].velocità.y * gruppo.getdeltaTempo()));
+      CHECK(updated_boids[1].posizione.x ==
+            doctest::Approx(posB.x + updated_boids[1].velocità.x *
+                                         gruppo.getdeltaTempo()));
+      CHECK(updated_boids[1].posizione.y ==
+            doctest::Approx(posB.y + updated_boids[1].velocità.y *
+                                         gruppo.getdeltaTempo()));
+    }
+    SUBCASE("Testing aggiornaboids con coesione, no s,a") {
+      b::Flock gruppo(10.0, 0.1);
 
-    CHECK(updated_boids[1].posizione.x ==
-          doctest::Approx(posB.x +
-                          updated_boids[1].velocità.x * gruppo.getdeltaTempo()));
-    CHECK(updated_boids[1].posizione.y ==
-          doctest::Approx(posB.y +
-                          updated_boids[1].velocità.y * gruppo.getdeltaTempo()));
-  }
-  SUBCASE("Testing aggiornaboids con coesione, no s,a") {
-    b::Flock gruppo(10.0, 0.1, 2.0);
+      b::vettore posA = {-2.0, 0.0};
+      b::vettore velA = {0.0, 0.0};
+       b::vettore posB = {2.0, 0.0};
+      b::vettore velB = {0.0, 0.0};
+      std::vector<b::Boid> flock1 {b::Boid(posA, velA),b::Boid(posB, velB)};
+      gruppo.aggiungiFlock(flock1);
 
-    b::vettore posA = {-2.0, 0.0};
-    b::vettore velA = {0.0, 0.0};
-    gruppo.aggiungiBoid(b::Boid(posA, velA));
+      double raggioVisuale = 10.0;
+      double raggioSeparazioneDS = 0.1;
+      double fattoreSeparazione = 0.0;
+      double fattoreAllineamento = 0.0;
+      double fattoreCoesione = 1.0;
 
-    b::vettore posB = {2.0, 0.0};
-    b::vettore velB = {0.0, 0.0};
-    gruppo.aggiungiBoid(b::Boid(posB, velB));
+      gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS,
+                           fattoreSeparazione, fattoreAllineamento,
+                           fattoreCoesione);
 
-    double raggioVisuale = 10.0;
-    double raggioSeparazioneDS = 0.1;
-    double fattoreSeparazione = 0.0;
-    double fattoreAllineamento = 0.0;
-    double fattoreCoesione = 1.0;
+      const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
 
-    gruppo.aggiornaBoids(raggioVisuale, raggioSeparazioneDS, fattoreSeparazione,
-                         fattoreAllineamento, fattoreCoesione);
+      CHECK(updated_boids.size() == 2);
 
-    const std::vector<b::Boid>& updated_boids = gruppo.getBoids();
+      double nuovaDistanza =
+          (updated_boids[0].posizione - updated_boids[1].posizione).modulo();
+      CHECK(nuovaDistanza < doctest::Approx(4.0));
 
-    CHECK(updated_boids.size() == 2);
+      CHECK(updated_boids[0].velocità.x == doctest::Approx(2.0));
+      CHECK(updated_boids[1].velocità.x == doctest::Approx(-2.0));
+      CHECK(updated_boids[0].velocità.y == doctest::Approx(0.0));
+      CHECK(updated_boids[1].velocità.y == doctest::Approx(0.0));
 
-    double nuovaDistanza =
-        (updated_boids[0].posizione - updated_boids[1].posizione).modulo();
-    CHECK(nuovaDistanza < doctest::Approx(4.0));
-
-    CHECK(updated_boids[0].velocità.x == doctest::Approx(2.0)); 
-    CHECK(updated_boids[1].velocità.x == doctest::Approx(-2.0)); 
-    CHECK(updated_boids[0].velocità.y == doctest::Approx(0.0));
-    CHECK(updated_boids[1].velocità.y == doctest::Approx(0.0));
-
-
-    CHECK(updated_boids[0].posizione.x > doctest::Approx(posA.x));
-    CHECK(updated_boids[1].posizione.x < doctest::Approx(posB.x));
-  }
-}
+      CHECK(updated_boids[0].posizione.x > doctest::Approx(posA.x));
+      CHECK(updated_boids[1].posizione.x < doctest::Approx(posB.x));
+    } 
+  } 
+} 
