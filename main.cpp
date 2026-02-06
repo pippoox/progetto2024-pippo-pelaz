@@ -13,7 +13,7 @@ void computeMeanDistance(const std::vector<b::Boid>& boids, double& mean,
   // Calcolo della distanza tra tutte le coppie di boid
   for (size_t i = 0; i < n; ++i) {
     for (size_t j = i + 1; j < n; ++j) {
-      double d = (boids[i].position - boids[j].position).lenght();
+      double d = (boids[i].position - boids[j].position).length();
       distances.push_back(d);
     }
   }
@@ -33,9 +33,9 @@ void computeMeanVelocity(const std::vector<b::Boid>& boids, double& mean,
                           double& devStd) {
   size_t n = boids.size();
   std::vector<double> magnitudes;
-  // Calcola lenght (intensità) della velocity per ogni boid
+  // Calcola length (intensità) della velocity per ogni boid
   for (const auto& b : boids) {
-    magnitudes.push_back(b.velocity.lenght());
+    magnitudes.push_back(b.speed.length());
   }
   // Media delle velocity
   double sum = 0.0;
