@@ -1,9 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "boids.hpp"
-#include "simulation_setup.hpp"
-#include "visualizzazione.hpp"
 
 #include "doctest.h"
+#include "simulation_setup.hpp"
+#include "stats.hpp"
+#include "visualizzazione.hpp"
 
 TEST_CASE("Testing b::Vector implementation") {
   SUBCASE("Testing operator+") {
@@ -32,7 +33,6 @@ TEST_CASE("Testing b::Vector implementation") {
 
   SUBCASE("Testing length") {
     b::Vector v = {3.0, 4.0};
-    // Uso length() con la 'h' finale come nel tuo boids.cpp
     CHECK(v.length() == doctest::Approx(5.0));
   }
 
@@ -44,7 +44,6 @@ TEST_CASE("Testing b::Vector implementation") {
   SUBCASE("Testing norm") {
     b::Vector v = {3.0, 4.0};
     b::Vector normalized_v = v.norm();
-    // Verifichiamo che il modulo del vettore normalizzato sia 1
     CHECK(normalized_v.length() == doctest::Approx(1.0));
     CHECK(normalized_v.x == doctest::Approx(0.6));
     CHECK(normalized_v.y == doctest::Approx(0.8));
@@ -53,34 +52,30 @@ TEST_CASE("Testing b::Vector implementation") {
   SUBCASE("Testing norm v={0.0,0.0}") {
     b::Vector v = {0.0, 0.0};
     b::Vector normalized_v = v.norm();
-    // Il tuo codice in boids.cpp restituisce {0.0, 0.0} in questo caso
     CHECK(normalized_v.x == doctest::Approx(0.0));
     CHECK(normalized_v.y == doctest::Approx(0.0));
   }
 }
 
 TEST_CASE("Testing BoidSimulation implementation") {
-  std::vector<b::Flock> flocks = {{0, 10.0, 2.0, 1.0, 1.0, 1.0}};
+  std::vector<b::Flock> flocks = {{0, 10.0, 2.0, 1.0, 1.0, 1.0, 1.2, 6.0}};
   b::BoidSimulation sim(flocks, 100.0, 100.0);
 
   SUBCASE("Testing getNeighbors same flock") {
-    sim.addBoids(b::Boid({0.0, 0.0}, {0.0, 0.0}, 0));   
-    sim.addBoids(b::Boid({5.0, 0.0}, {0.0, 0.0}, 0));   
-    sim.addBoids(b::Boid({15.0, 0.0}, {0.0, 0.0}, 0));  
+    sim.addBoids(b::Boid({0.0, 0.0}, {0.0, 0.0}, 0));
+    sim.addBoids(b::Boid({5.0, 0.0}, {0.0, 0.0}, 0));
+    sim.addBoids(b::Boid({15.0, 0.0}, {0.0, 0.0}, 0));
 
     std::vector<size_t> neighbors = sim.getNeighbors(0, 10.0);
 
     CHECK(neighbors.size() == 1);
-    CHECK(neighbors[0] == 1); 
+    CHECK(neighbors[0] == 1);
   }
 
   SUBCASE("Testing getNeighborsDS") {
-   
-    sim.addBoids(b::Boid({0.0, 0.0}, {0.0, 0.0}, 0));  
-    sim.addBoids(b::Boid({1.0, 0.0}, {0.0, 0.0},
-                         1));  
+    sim.addBoids(b::Boid({0.0, 0.0}, {0.0, 0.0}, 0));
+    sim.addBoids(b::Boid({1.0, 0.0}, {0.0, 0.0}, 1));
 
-    
     std::vector<size_t> neighborsDS = sim.getNeighborsDS(0, 2.0);
     CHECK(neighborsDS.size() == 1);
     CHECK(neighborsDS[0] == 1);
@@ -88,7 +83,7 @@ TEST_CASE("Testing BoidSimulation implementation") {
 
   SUBCASE("Testing separation") {
     sim.addBoids(b::Boid({0.0, 0.0}, {0.0, 0.0}, 0));
-    sim.addBoids(b::Boid({1.0, 0.0}, {0.0, 0.0}, 0));  
+    sim.addBoids(b::Boid({1.0, 0.0}, {0.0, 0.0}, 0));
 
     std::vector<size_t> neighborsDS = {1};
 
@@ -99,9 +94,8 @@ TEST_CASE("Testing BoidSimulation implementation") {
   }
 
   SUBCASE("Testing alignment") {
-    sim.addBoids(b::Boid({0.0, 0.0}, {1.0, 0.0}, 0)); 
-    sim.addBoids(
-        b::Boid({1.0, 0.0}, {3.0, 0.0}, 0));  
+    sim.addBoids(b::Boid({0.0, 0.0}, {1.0, 0.0}, 0));
+    sim.addBoids(b::Boid({1.0, 0.0}, {3.0, 0.0}, 0));
 
     std::vector<size_t> neighbors = {1};
 
@@ -123,34 +117,27 @@ TEST_CASE("Testing BoidSimulation implementation") {
   }
 }
 TEST_CASE("Testing BoidSimulation Integration (updateBoids)") {
-  // Common setup: 100.0 x 100.0 area, single flock definition
-  // Parameters: id=0, visual_range=10.0, separation_range=2.0, weights(s=1, a=1, c=1)
-  std::vector<b::Flock> flocks = {{0, 10.0, 2.0, 1.0, 1.0, 1.0}};
-  b::BoidSimulation sim(flocks, 100.0, 100.0);
-
   SUBCASE("Simple linear movement without neighbors") {
-    // Adding a single isolated boid at the center
-    b::Boid b1({50.0, 50.0}, {2.0, 0.0}, 0);
-    sim.addBoids(b1);
+    b::Flock f(0, 10.0, 2.0, 0.0, 0.0, 0.0, 0.0, 100.0);
+    b::BoidSimulation sim({f}, 100.0, 100.0);
 
+    sim.addBoids(b::Boid({50.0, 50.0}, {2.0, 0.0}, 0));
     double dt = 1.0;
     sim.updateBoids(dt);
 
     const std::vector<b::Boid>& boids = sim.getBoids();
-    
-    // With no neighbors, speed should remain constant.
-    // New Position = Old Position + (Velocity * dt) -> 50.0 + (2.0 * 1.0) = 52.0
+
     CHECK(boids[0].position.x == doctest::Approx(52.0));
     CHECK(boids[0].position.y == doctest::Approx(50.0));
   }
 
   SUBCASE("Maximum speed clamping logic") {
-    // Initialize a boid near the global speed limit (b::maxVel = 6.0)
+    b::Flock f(0, 10.0, 2.0, 0.0, 0.0, 0.0, 0.0, 6.0);
+    b::BoidSimulation sim({f}, 100.0, 100.0);
+
     b::Boid b1({50.0, 50.0}, {5.9, 0.0}, 0);
-    
-    // Add a neighbor that forces it to accelerate (e.g., via alignment)
     b::Boid b2({51.0, 50.0}, {6.0, 0.0}, 0);
-    
+
     sim.addBoids(b1);
     sim.addBoids(b2);
 
@@ -158,49 +145,58 @@ TEST_CASE("Testing BoidSimulation Integration (updateBoids)") {
     sim.updateBoids(dt);
 
     const std::vector<b::Boid>& boids = sim.getBoids();
-    
-    // Ensure the resulting speed does not exceed the defined maxVel
-    CHECK(boids[0].speed.length() <= doctest::Approx(b::maxVel));
+
+    CHECK(boids[0].speed.length() <= doctest::Approx(f.maxSpeed));
+  }
+
+  SUBCASE("Minimum speed clamping logic (per-flock minSpeed)") {
+    b::Flock f(0, 10.0, 2.0, 0.0, 0.0, 0.0, 1.2, 6.0);
+    b::BoidSimulation sim({f}, 100.0, 100.0);
+
+    b::Boid b1({50.0, 50.0}, {5.9, 0.0}, 0);
+
+    sim.addBoids(b1);
+
+    double dt = 1.0;
+    sim.updateBoids(1.0);
+
+    const auto& boids = sim.getBoids();
+    CHECK(boids[0].speed.length() == doctest::Approx(f.minSpeed));
   }
 
   SUBCASE("Toroidal screen wrapping (Edge handling)") {
-    // Place a boid at the far right edge (width = 100.0) moving right
+    b::Flock f(0, 10.0, 2.0, 0.0, 0.0, 0.0, 0.0, 100.0);
+    b::BoidSimulation sim({f}, 100.0, 100.0);
+
     b::Boid b1({99.5, 50.0}, {1.0, 0.0}, 0);
+
     sim.addBoids(b1);
 
     double dt = 1.0;
     sim.updateBoids(dt);
 
     const std::vector<b::Boid>& boids = sim.getBoids();
-    
-    // The boid should wrap around and appear on the left side (near 0.5)
+
     CHECK(boids[0].position.x < 1.0);
     CHECK(boids[0].position.x >= 0.0);
   }
 }
 TEST_CASE("Testing Simulation Setup (buildSimulation)") {
-  // Create a dummy config
   b::simConfig cfg;
-  cfg.N = 10;           // Total boids
-  cfg.NF = 2;          // Two flocks
-  cfg.count = {7, 3};  // 7 boids in flock 0, 3 in flock 1
-  
-  // Define flock parameters
-  cfg.flocks = {
-      {0, 10.0, 2.0, 1.0, 1.0, 1.0},
-      {1, 10.0, 2.0, 1.0, 1.0, 1.0}
-  };
+  cfg.N = 10;
+  cfg.NF = 2;
+  cfg.count = {7, 3};
+  cfg.width = 100.0;
+  cfg.height = 100.0;
+  cfg.dt = 0.5;
 
-  double width = 800.0;
-  double height = 600.0;
+  cfg.flocks = {{0, 10.0, 2.0, 1.0, 1.0, 1.0, 1.2, 6.0},
+                {1, 10.0, 2.0, 1.0, 1.0, 1.0, 1.2, 6.0}};
 
-  // Run the builder
-  b::BoidSimulation sim = b::buildSimulation(cfg, width, height);
+  b::BoidSimulation sim = b::buildSimulation(cfg);
   const std::vector<b::Boid>& boids = sim.getBoids();
 
-  SUBCASE("Correct total number of boids") {
-    CHECK(boids.size() == 10);
-  }
+  SUBCASE("Correct total number of boids") { CHECK(boids.size() == 10); }
 
   SUBCASE("Correct flock distribution") {
     int count0 = 0;
@@ -216,9 +212,99 @@ TEST_CASE("Testing Simulation Setup (buildSimulation)") {
   SUBCASE("Boids are within screen boundaries") {
     for (const auto& boid : boids) {
       CHECK(boid.position.x >= 0.0);
-      CHECK(boid.position.x <= width);
+      CHECK(boid.position.x <= cfg.width);
       CHECK(boid.position.y >= 0.0);
-      CHECK(boid.position.y <= height);
+      CHECK(boid.position.y <= cfg.height);
     }
   }
 }
+
+TEST_CASE("Stats::computeMeanSpeed"){
+    SUBCASE("Empty vector -> mean=0, stdDev=0"){std::vector<b::Boid> boids;
+auto s = b::computeMeanSpeed(boids);
+CHECK(s.mean == doctest::Approx(0.0));
+CHECK(s.stdDev == doctest::Approx(0.0));
+}
+
+SUBCASE("Single boid -> stdDev=0") {
+  std::vector<b::Boid> boids = {b::Boid({0.0, 0.0}, {3.0, 4.0}, 0)};
+  auto s = b::computeMeanSpeed(boids);
+  CHECK(s.mean == doctest::Approx(5.0));
+  CHECK(s.stdDev == doctest::Approx(0.0));
+}
+
+SUBCASE("Two boids with speeds 0 and 2 -> mean=1, stdDev=1") {
+  std::vector<b::Boid> boids = {b::Boid({0.0, 0.0}, {0.0, 0.0}, 0),
+                                b::Boid({0.0, 0.0}, {2.0, 0.0}, 0)};
+  auto s = b::computeMeanSpeed(boids);
+  CHECK(s.mean == doctest::Approx(1.0));
+  CHECK(s.stdDev == doctest::Approx(1.0));
+}
+
+SUBCASE("Three boids speeds 1,2,3 -> mean=2, stdDev=sqrt(2/3)") {
+  std::vector<b::Boid> boids = {
+      b::Boid({0.0, 0.0}, {1.0, 0.0}, 0),
+      b::Boid({0.0, 0.0}, {2.0, 0.0}, 0),
+      b::Boid({0.0, 0.0}, {3.0, 0.0}, 0),
+  };
+  auto s = b::computeMeanSpeed(boids);
+  CHECK(s.mean == doctest::Approx(2.0));
+  CHECK(s.stdDev == doctest::Approx(std::sqrt(2.0 / 3.0)));
+}
+}
+;
+
+TEST_CASE("Stats::computeMeanDistance") {
+  SUBCASE("Empty vector -> mean=0, stdDev=0") {
+    std::vector<b::Boid> boids;
+    auto s = b::computeMeanDistance(boids);
+    CHECK(s.mean == doctest::Approx(0.0));
+    CHECK(s.stdDev == doctest::Approx(0.0));
+  }
+
+  SUBCASE("Single boid -> mean=0, stdDev=0 (no pairs)") {
+    std::vector<b::Boid> boids = {b::Boid({0.0, 0.0}, {0.0, 0.0}, 0)};
+    auto s = b::computeMeanDistance(boids);
+    CHECK(s.mean == doctest::Approx(0.0));
+    CHECK(s.stdDev == doctest::Approx(0.0));
+  }
+
+  SUBCASE("Two boids at distance 5 -> mean=5, stdDev=0") {
+    std::vector<b::Boid> boids = {b::Boid({0.0, 0.0}, {0.0, 0.0}, 0),
+                                  b::Boid({3.0, 4.0}, {0.0, 0.0}, 0)};
+    auto s = b::computeMeanDistance(boids);
+    CHECK(s.mean == doctest::Approx(5.0));
+    CHECK(s.stdDev == doctest::Approx(0.0));
+  }
+
+  SUBCASE(
+      "Three boids on a line: distances 1,2,1 -> mean=4/3, stdDev=sqrt(2/9)") {
+    std::vector<b::Boid> boids = {
+        b::Boid({0.0, 0.0}, {0.0, 0.0}, 0),
+        b::Boid({1.0, 0.0}, {0.0, 0.0}, 0),
+        b::Boid({2.0, 0.0}, {0.0, 0.0}, 0),
+    };
+    auto s = b::computeMeanDistance(boids);
+    CHECK(s.mean == doctest::Approx(4.0 / 3.0));
+    CHECK(s.stdDev == doctest::Approx(std::sqrt(2.0 / 9.0)));
+  }
+
+  SUBCASE("Square points (0,0),(1,0),(0,1),(1,1)") {
+    std::vector<b::Boid> boids = {
+        b::Boid({0.0, 0.0}, {0.0, 0.0}, 0),
+        b::Boid({1.0, 0.0}, {0.0, 0.0}, 0),
+        b::Boid({0.0, 1.0}, {0.0, 0.0}, 0),
+        b::Boid({1.0, 1.0}, {0.0, 0.0}, 0),
+    };
+    auto s = b::computeMeanDistance(boids);
+
+    const double mean = (4.0 + 2.0 * std::sqrt(2.0)) / 6.0;
+    const double e2 = 4.0 / 3.0; 
+    const double var = e2 - mean * mean;
+    const double stddev = std::sqrt(var);
+
+    CHECK(s.mean == doctest::Approx(mean));
+    CHECK(s.stdDev == doctest::Approx(stddev));
+  }
+}
+

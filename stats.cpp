@@ -1,9 +1,9 @@
-#include "stats.hpp"
 
 #include <cmath>
 #include <vector>
 
 #include "boids.hpp"
+#include "stats.hpp"
 
 namespace b {
 
@@ -27,7 +27,7 @@ Stats computeMeanDistance(const std::vector<b::Boid>& boids) {
 
   for (size_t i = 0; i < n; ++i) {
     for (size_t j = i + 1; j < n; ++j) {
-      const double d = (boids[i].position - boids[j].position).lenght();
+      const double d = (boids[i].position - boids[j].position).length();
       sum += d;
       sumSq += d * d;
       ++pairs;
@@ -37,12 +37,12 @@ Stats computeMeanDistance(const std::vector<b::Boid>& boids) {
   return finalizeStats(sum, sumSq, pairs);
 }
 
-Stats computeMeanVelocity(const std::vector<b::Boid>& boids) {
+Stats computeMeanSpeed(const std::vector<b::Boid>& boids) {
   double sum = 0.0;
   double sumSq = 0.0;
 
   for (const auto& b : boids) {
-    const double d = b.velocity.lenght();
+    const double d = b.speed.length();
     sum += d;
     sumSq += d * d;
   }

@@ -1,5 +1,7 @@
-#include <vector>
+#ifndef B_STATS_HPP
+#define B_STATS_HPP
 
+#include <vector>
 #include "boids.hpp"
 
 namespace b {
@@ -13,6 +15,8 @@ struct Stats {
 static Stats finalizeStats(double sum, double sumSq, size_t count); // Funzione ausiliaria per calcolare
 // media e deviazione standard (formula matematica)
 Stats computeMeanDistance(const std::vector<b::Boid>& boids); 
-Stats computeMeanVelocity(const std::vector<b::Boid>& boids);
+Stats computeMeanSpeed(const std::vector<b::Boid>& boids);
 
 }  // namespace b
+
+#endif

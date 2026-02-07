@@ -2,7 +2,7 @@
 #define VISUALIZZAZIONE_HPP
 
 #include <SFML/Graphics.hpp>
-
+#include <vector>
 #include "boids.hpp"
 namespace b {
 // Classe SimulationRenderer: gestisce il rendering dei boid in una finestra SFML

@@ -1,14 +1,12 @@
 #ifndef B_BOIDS_HPP
 #define B_BOIDS_HPP
 
-#include <cmath>
-#include <iostream>
 #include <vector>
 
 namespace b {
 
-// Struct Vector: rappresenta un vettore 2D con operazioni di base: somma, differenza,
-// prodotto per scalare, modulo e normalizzazione.
+// Struct Vector: rappresenta un vettore 2D con operazioni di base: somma,
+// differenza, prodotto per scalare, modulo e normalizzazione.
 struct Vector {
   double x;
   double y;
@@ -16,14 +14,13 @@ struct Vector {
   Vector operator+(Vector const& v) const;
   Vector operator-(Vector const& v) const;
   Vector operator*(double a) const;
-  double lenght() const;
+  double length() const;
   Vector norm() const;
-}; 
+};
 
-// Classe Boid: rappresenta un singolo boid con position, speed e numero che
-// identifica lo stormo a cui appartiene. Include metodi per aggiornare posizioni e velocità.
-class Boid {
- public:
+// Struct Boid: rappresenta un singolo boid con position, speed e numero che
+// identifica lo stormo a cui appartiene.
+struct Boid {
   Vector position;
   Vector speed;
   int flockid;
@@ -32,7 +29,7 @@ class Boid {
 };
 
 // Struct Flock: contiene i parametri caratteristici per l'applicazione delle
-// regole di volo di uno stormo.
+// regole di volo di uno stormo e un int che identifica lo stormo.
 struct Flock {
   int id;     // Numero che identifica il flock
   double d;   // Raggio visivo per alignment e cohesion
@@ -40,50 +37,63 @@ struct Flock {
   double s;   // Peso della separation
   double a;   // Peso dell'alignment
   double c;   // Peso della cohesion
-  
-  double maxSpeed;
   double minSpeed;
+  double maxSpeed;
 
-<<<<<<< HEAD
-  Flock(int id_, double d_, double ds_, double s_,
-        double a_, double c_, double maxS_, double minS_)
-      : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_}, maxSpeed{maxS_}, minSpeed{minS_} {};
-=======
-  Flock(const int& id_, const double& d_, const double& ds_, const double& s_,
-        const double& a_, const double& c_)
-      : id{id_}, d{d_}, ds{ds_}, s{s_}, a{a_}, c{c_} {}
->>>>>>> 96b4b6d35e21c07ff05948a3f7f8f745228d7706
+  Flock(int id_, double d_, double ds_, double s_, double a_, double c_,
+        double minS_, double maxS_)
+      : id{id_},
+        d{d_},
+        ds{ds_},
+        s{s_},
+        a{a_},
+        c{c_},
+        minSpeed{minS_},
+        maxSpeed{maxS_} {};
 };
 
-// Classe BoidSimulation: rappresenta un insieme di boid che possono appartenere a stormi differenti. 
-// Contiene anche i valori di width e height entro cui si muovono i boid. Include metodi per costruire
-// simulazione.
+// Classe BoidSimulation: rappresenta un insieme di boid che possono appartenere
+// a stormi differenti. Contiene anche i valori di width e height che
+// definiscono le dimensioni della finestra grafica. Include metodi per
+// costruire simulazione.
 class BoidSimulation {
  private:
   std::vector<Boid> boids;
   std::vector<Flock> flocks;
 
   const double width;
-  const double height; 
+  const double height;
+
  public:
-  BoidSimulation(const std::vector<Flock>& flocks_, const double& width_, const double& height_)
-      :flocks(flocks_), width(width_), height(height_) {}
+  BoidSimulation(const std::vector<Flock>& flocks_, const double& width_,
+                 const double& height_)
+      : flocks(flocks_), width(width_), height(height_) {}
   const std::vector<Boid>& getBoids() const;
   const double& getWidth() const;
   const double& getHeight() const;
   void addBoids(Boid const& boid);
-  std::vector<size_t> getNeighbors(size_t indice, double d) const; // Restituisce un vettore di i entro distanza d 
-  // da un boid i-esimo
-  std::vector<size_t> getNeighborsDS(size_t indice, double ds) const; // Restituisce un vettore di int, che corrispondono
-  // alle posizioni dei boid nel vettore boids entro distanza d da un boid i-esimo
-  Vector separation(size_t i, const std::vector<size_t>& neighborsDS, double s); // Restituisce un vettore di int, 
-  // che corrispondon alle posizioni dei boid nel vettore boids entro distanza ds da un boid i-esimo
-  Vector alignment(size_t i, const std::vector<size_t>& getNeighbors, 
-                       double a); // Calcola vettore allineamento. Si applica solo su boid dello stesso flock
-  Vector cohesion(size_t i, const std::vector<size_t>& getNeighbors, double c); // Calcola vettore coesione.
-  // Si applica solo su boid dello stesso flock
-  void updateBoids(double dt); // Aggiorna posizione e velocità dei boid attraverso i vettori separazione, 
-  // allineamento e coesione
+  std::vector<size_t> getNeighbors(size_t indice, double d)
+      const;  // Restituisce un vettore di int (posizione boid dentro vettore
+              // boids) entro distanza d da un boid i-esimo
+  std::vector<size_t> getNeighborsDS(size_t indice, double ds)
+      const;  // Restituisce un vettore di int(posizione boid dentro vettore
+              // boids)entro distanza ds da un boid i-esimo
+  Vector separation(size_t i, const std::vector<size_t>& neighborsDS,
+                    double s);  // Calcola correzione velocità data dalla regola
+                                // di separazione sui boid del vettore viciniDS.
+                                // Si applica su tutti i boid
+  Vector alignment(size_t i, const std::vector<size_t>& getNeighbors,
+                   double a);  // Calcola correzione velocità data dalla regola
+                               // di allineamento sui boid del vettore vicini.
+                               // Si applica solo su boid dello stesso flock.
+  Vector cohesion(size_t i, const std::vector<size_t>& getNeighbors,
+                  double c);  // Calcola correzione velocità data dalla regola
+                              // di coesione sui boid del vettore vicini.
+                              // Si applica solo su boid dello stesso flock.
+  void updateBoids(
+      double dt);  // Aggiorna posizione e velocità dei boid
+                   // attraverso le correzioni di velocità date da separazione,
+                   // allineamento e coesione
 };
 
 }  // namespace b

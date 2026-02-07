@@ -9,16 +9,13 @@
 using namespace sf;
 using namespace b;
 
-int main() {  
-  const double width = 800;
-  const double height = 600; 
-  const double dt = 0.5;
+int main() {   
 
   auto cfg = b::readConfig();
-  auto sim = b::buildSimulation(cfg, width, height);
+  auto sim = b::buildSimulation(cfg);
 
-  sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(width),
-                                        static_cast<unsigned int>(height)),
+  sf::RenderWindow window(sf::VideoMode(static_cast<unsigned int>(sim.getWidth()),
+                                        static_cast<unsigned int>(sim.getHeight())),
                           "Boids Simulation");
 
     b::SimulationRenderer renderer;
@@ -29,7 +26,7 @@ int main() {
         if (event.type == sf::Event::Closed) window.close();
       }
 
-      sim.updateBoids(dt);
+      sim.updateBoids(cfg.dt);
 
       window.clear(sf::Color::Black);
       renderer.drawBoids(sim.getBoids(), window); // <-- cambia firma

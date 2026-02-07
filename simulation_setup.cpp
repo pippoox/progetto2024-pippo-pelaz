@@ -1,15 +1,18 @@
-#include "simulation_setup.hpp"
 
 #include <algorithm>
 #include <iostream>
 #include <random>
 
 #include "boids.hpp"
+#include "simulation_setup.hpp"
 
 namespace b {
 
 simConfig readConfig() {
   simConfig cfg;
+  cfg.width = 800;
+  cfg.height = 600;
+  cfg.dt = 0.5;
   int input;
 
   std::cout << "Inserisci N(int):\n";
@@ -38,14 +41,10 @@ simConfig readConfig() {
   }
 
   cfg.flocks.reserve(cfg.NF);
-<<<<<<< HEAD
-  for (int i = 0; i < cfg.NF; ++i) {
-    const double maxSpeed = 6.0;
-    const double minSpeed = 1.2;
-
-=======
   for (size_t i = 0; i < static_cast<size_t>(cfg.NF); ++i) {
->>>>>>> 96b4b6d35e21c07ff05948a3f7f8f745228d7706
+    const double minSpeed = 1.2;
+    const double maxSpeed = 6.0;
+
     double d;
     double ds;
     double s;
@@ -57,22 +56,17 @@ simConfig readConfig() {
     if (std::cin.fail()) {
       throw std::runtime_error("Errore: non hai inserito il tipo corretto!");
     }
-    cfg.flocks.emplace_back(i, d, ds, s, a, c, maxSpeed, minSpeed);
+    cfg.flocks.emplace_back(i, d, ds, s, a, c, minSpeed, maxSpeed);
   }
 
   cfg.count.assign(cfg.NF, 0);
   size_t sum = 0;
   if (cfg.NF > 1) {
-<<<<<<< HEAD
-    for (int i = 0; i < cfg.NF - 1; ++i) {
-      int remaining = cfg.NF - i - 1;
-      int max = cfg.N - sum -
-                remaining;  // Numero di boid massimo affinchè i flock rimanenti
-=======
     for (size_t i = 0; i < static_cast<size_t>(cfg.NF) - 1; ++i) {
-      size_t remaining = cfg.NF - i - 1; 
-      size_t max = cfg.N - sum - remaining; // Numero di boid massimo affinchè i flock rimanenti
->>>>>>> 96b4b6d35e21c07ff05948a3f7f8f745228d7706
+      size_t remaining = cfg.NF - i - 1;
+      size_t max =
+          cfg.N - sum -
+          remaining;  // Numero di boid massimo affinchè i flock rimanenti
       // contengano almeno un boid.
       std::cout << "Inserisci boid nel flock" << i << "(min 1, max " << max
                 << "):\n";
@@ -95,13 +89,12 @@ simConfig readConfig() {
   return cfg;
 }
 
-BoidSimulation buildSimulation(const simConfig& cfg, const double& width,
-                               const double& height) {
-  BoidSimulation sim(cfg.flocks, width, height);
+BoidSimulation buildSimulation(const simConfig& cfg) {
+  BoidSimulation sim(cfg.flocks, cfg.width, cfg.height);
 
   std::mt19937 gen(std::random_device{}());
-  std::uniform_real_distribution<double> posxDist(0.0, width);
-  std::uniform_real_distribution<double> posyDist(0.0, height);
+  std::uniform_real_distribution<double> posxDist(0.0, cfg.width);
+  std::uniform_real_distribution<double> posyDist(0.0, cfg.height);
   std::uniform_real_distribution<double> angleDist(0.0, 2 * M_PI);
 
   std::vector<int>
@@ -121,7 +114,7 @@ BoidSimulation buildSimulation(const simConfig& cfg, const double& width,
   for (size_t i = 0; i < cfg.N; ++i) {
     b::Vector pos{posxDist(gen), posyDist(gen)};
 
-    int fid = labels[i];
+    const auto fid = static_cast<std::size_t>(labels[i]);
     const auto& f = cfg.flocks[fid];
     std::uniform_real_distribution<double> speedDist(f.minSpeed, f.maxSpeed);
 

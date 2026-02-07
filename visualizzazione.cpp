@@ -1,8 +1,8 @@
-#include "visualizzazione.hpp"
 
 #include <cmath>
 
 #include "boids.hpp"
+#include "visualizzazione.hpp"
 
 namespace b {
 // Costruttore della classe SimulationRenderer
@@ -36,10 +36,10 @@ void SimulationRenderer::drawBoids(const std::vector<Boid>& boids,
     boidShape.setFillColor(colore);
 
     const auto& pos = boid.position;
-    const auto& vel = boid.speed;
+    const auto& spd = boid.speed;
 
     // Calcola l'angolo in radianti (atan2(y, x))
-    double angleRad = std::atan2(vel.y, vel.x);
+    double angleRad = std::atan2(spd.y, spd.x);
 
     // Converte i radianti in gradi
     double angleDeg = angleRad * (180. / pi);
