@@ -232,6 +232,13 @@ build CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPIL
   OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
 
+build CMakeFiles/boids.sim.dir/RelWithDebInfo/stats.cpp.o: CXX_COMPILER__boids.2esim_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.sim_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.sim.dir/RelWithDebInfo/stats.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target boids.sim
@@ -240,7 +247,7 @@ build CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPIL
 #############################################
 # Link the executable RelWithDebInfo/boids.sim
 
-build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInfo CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o
+build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInfo CMakeFiles/boids.sim.dir/RelWithDebInfo/main.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/simulation_setup.cpp.o CMakeFiles/boids.sim.dir/RelWithDebInfo/stats.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.sim.dir/RelWithDebInfo
   POST_BUILD = :
@@ -257,9 +264,9 @@ build RelWithDebInfo/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_RelWithDebInf
 
 build cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO: phony || CMakeFiles/boids.sfml.dir
 
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/main.grafica.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/main_sfml.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/main_sfml.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/main_sfml.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
@@ -278,9 +285,16 @@ build CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPI
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
 
-build CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/renderer.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/renderer.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/renderer.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
+
+build CMakeFiles/boids.sfml.dir/RelWithDebInfo/stats.cpp.o: CXX_COMPILER__boids.2esfml_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.sfml_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.sfml.dir/RelWithDebInfo/stats.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
@@ -293,7 +307,7 @@ build CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o: CXX_COMPIL
 #############################################
 # Link the executable RelWithDebInfo/boids.sfml
 
-build RelWithDebInfo/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_RelWithDebInfo CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build RelWithDebInfo/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_RelWithDebInfo CMakeFiles/boids.sfml.dir/RelWithDebInfo/main_sfml.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/simulation_setup.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/renderer.cpp.o CMakeFiles/boids.sfml.dir/RelWithDebInfo/stats.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/RelWithDebInfo
@@ -318,9 +332,9 @@ build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o: CXX_COMPILER__boids.2et
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
 
-build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids.test.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
+build CMakeFiles/boids.t.dir/RelWithDebInfo/boids_test.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/boids_test.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
-  DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/boids_test.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
@@ -328,6 +342,13 @@ build CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o: CXX_COMPILER__boid
 build CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
   DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
   DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
+  OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
+
+build CMakeFiles/boids.t.dir/RelWithDebInfo/stats.cpp.o: CXX_COMPILER__boids.2et_RelWithDebInfo /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.t_RELWITHDEBINFO
+  DEFINES = -DCMAKE_INTDIR=\"RelWithDebInfo\"
+  DEP_FILE = CMakeFiles/boids.t.dir/RelWithDebInfo/stats.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
@@ -340,7 +361,7 @@ build CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o: CXX_COMPILER
 #############################################
 # Link the executable RelWithDebInfo/boids.t
 
-build RelWithDebInfo/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_RelWithDebInfo CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o
+build RelWithDebInfo/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_RelWithDebInfo CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/boids_test.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o CMakeFiles/boids.t.dir/RelWithDebInfo/stats.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.t.dir/RelWithDebInfo
   POST_BUILD = :

@@ -38,10 +38,10 @@ find_package(SFML 2.5 COMPONENTS graphics REQUIRED)
 # dichiara un eseguibile chiamato "progetto", prodotto a partire dai file sorgente indicati
 # sostituire "progetto" con il nome del proprio eseguibile e i file sorgente con i propri (con nomi sensati!)
 # Versione statistica
-add_executable(boids.sim main.cpp boids.cpp simulation_setup.cpp)
+add_executable(boids.sim main.cpp boids.cpp simulation_setup.cpp stats.cpp)
 
 # Versione grafica
-add_executable(boids.sfml main.grafica.cpp boids.cpp simulation_setup.cpp visualizzazione.cpp)
+add_executable(boids.sfml main_sfml.cpp boids.cpp simulation_setup.cpp renderer.cpp stats.cpp)
 
 # Target dei test
 target_link_libraries(boids.sfml PRIVATE sfml-graphics sfml-window sfml-system)
@@ -52,7 +52,7 @@ target_link_libraries(boids.sfml PRIVATE sfml-graphics sfml-window sfml-system)
 if (BUILD_TESTING)
 
   # aggiungi l'eseguibile progetto.t
-  add_executable(boids.t boids.cpp boids.test.cpp simulation_setup.cpp)
+  add_executable(boids.t boids.cpp boids_test.cpp simulation_setup.cpp stats.cpp)
   # aggiungi l'eseguibile progetto.t alla lista dei test
   add_test(NAME boids.t COMMAND boids.t)
 

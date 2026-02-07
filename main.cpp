@@ -17,7 +17,7 @@ int main() {
 
     auto meanDistance = b::computeMeanDistance(sim.getBoids());
     auto meanSpeed = b::computeMeanSpeed(sim.getBoids());
-    // Output: tempo, distanza mean e dev std, velocity mean e dev std
+    // Output: time, distance mean and dev std, velocity mean and dev std
     std::cout << step * cfg.dt << " " << meanDistance.mean << " "
               << meanDistance.stdDev << " " << meanSpeed.mean << " "
               << meanSpeed.stdDev << "\n";

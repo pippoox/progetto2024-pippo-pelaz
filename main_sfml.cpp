@@ -3,7 +3,7 @@
 #include <random>
 
 #include "boids.hpp"
-#include "visualizzazione.hpp"
+#include "renderer.hpp"
 #include "simulation_setup.hpp"
 
 using namespace sf;
@@ -29,7 +29,7 @@ int main() {
       sim.updateBoids(cfg.dt);
 
       window.clear(sf::Color::Black);
-      renderer.drawBoids(sim.getBoids(), window); // <-- cambia firma
+      renderer.drawBoids(sim.getBoids(), window); 
       window.display();
     }
 

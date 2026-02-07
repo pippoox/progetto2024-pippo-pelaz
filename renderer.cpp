@@ -1,12 +1,12 @@
 
+#include "renderer.hpp"
+
 #include <cmath>
 
 #include "boids.hpp"
-#include "visualizzazione.hpp"
 
 namespace b {
-// Costruttore della classe SimulationRenderer
-// Imposta le dimensioni della finestra
+
 const double pi = 3.14159265359;
 
 SimulationRenderer::SimulationRenderer() {
@@ -25,8 +25,8 @@ static const std::vector<sf::Color> flockColors = {
     sf::Color::Green,  sf::Color::Red,     sf::Color::Blue,
     sf::Color::Yellow, sf::Color::Magenta, sf::Color::Cyan};
 
-// Metodo per disegnare i boid
-
+// Renders each boid as a geometric shape (a triangle).
+// The orientation of the shape is updated to match the boid's speed vector.
 void SimulationRenderer::drawBoids(const std::vector<Boid>& boids,
                                    sf::RenderWindow& window) {
   for (const auto& boid : boids) {
@@ -38,25 +38,19 @@ void SimulationRenderer::drawBoids(const std::vector<Boid>& boids,
     const auto& pos = boid.position;
     const auto& spd = boid.speed;
 
-    // Calcola l'angolo in radianti (atan2(y, x))
+    // Calculates the rotation angle based on the velocity vector to point
+    // the boid in its direction of travel.
     double angleRad = std::atan2(spd.y, spd.x);
 
-    // Converte i radianti in gradi
     double angleDeg = angleRad * (180. / pi);
 
-    // Applica la correzione di +90 gradi.
-    // CiÃ² compensa il fatto che atan2 misura da +X (destra)
-    // mentre il nostro triangolo a 0 gradi punta verso -Y (alto).
     double rotation = angleDeg + 90.;
 
-    // 1. Applica la position
-    boidShape.setPosition(static_cast<float>(pos.x),
-                          static_cast<float>(pos.y));
-    // 2. Applica la rotazione
+    boidShape.setPosition(static_cast<float>(pos.x), static_cast<float>(pos.y));
+
     boidShape.setRotation(static_cast<float>(rotation));
 
     window.draw(boidShape);
   }
 };
 }  // namespace b
-// namespace b

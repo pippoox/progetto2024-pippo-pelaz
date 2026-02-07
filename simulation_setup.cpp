@@ -8,11 +8,14 @@
 
 namespace b {
 
+// Parses simulation parameters from a configuration file or standard input.
+// Includes physics constants like delta time (dt), interaction radii, 
+// and steering behavior weights (s, a, c).
 simConfig readConfig() {
   simConfig cfg;
   cfg.width = 800;
   cfg.height = 600;
-  cfg.dt = 0.5;
+  cfg.dt = 0.1;
   int input;
 
   std::cout << "Inserisci N(int):\n";
@@ -66,8 +69,7 @@ simConfig readConfig() {
       size_t remaining = cfg.NF - i - 1;
       size_t max =
           cfg.N - sum -
-          remaining;  // Numero di boid massimo affinchè i flock rimanenti
-      // contengano almeno un boid.
+          remaining;  // Maximum number of boids to ensure that each remaining flock contains at least one boid.
       std::cout << "Inserisci boid nel flock" << i << "(min 1, max " << max
                 << "):\n";
       std::cin >> cfg.count[i];
@@ -81,14 +83,16 @@ simConfig readConfig() {
       sum += cfg.count[i];
     }
     cfg.count[cfg.NF - 1] =
-        cfg.N - sum;  // L'ultimo flock è riempito automaticamente con
-    // i boid non ancora inseriti.
+        cfg.N - sum;  // The last flock is automatically populated with the remaining boids.
   } else {
     cfg.count[0] = cfg.N;
   }
   return cfg;
 }
 
+// Factory function to create a BoidSimulation object.
+// Sets up the initial state by distributing boids across the coordinate system
+// with randomized positions and speeds.
 BoidSimulation buildSimulation(const simConfig& cfg) {
   BoidSimulation sim(cfg.flocks, cfg.width, cfg.height);
 
@@ -98,8 +102,7 @@ BoidSimulation buildSimulation(const simConfig& cfg) {
   std::uniform_real_distribution<double> angleDist(0.0, 2 * M_PI);
 
   std::vector<int>
-      labels;  // Vettore che contiene gli int che identificano a quale flock
-  // appartiene un boid
+      labels; // Vector containing the IDs that identify which flock each boid belongs to. 
   labels.reserve(cfg.N);
   for (size_t fid = 0; fid < cfg.NF; ++fid) {
     for (size_t k = 0; k < cfg.count[fid]; ++k) {
@@ -108,8 +111,7 @@ BoidSimulation buildSimulation(const simConfig& cfg) {
   }
 
   std::shuffle(labels.begin(), labels.end(),
-               gen);  // Rimescola in maniera casuale i flockid
-  // dentro labels
+               gen); // Randomly shuffles the flock IDs within labels.
 
   for (size_t i = 0; i < cfg.N; ++i) {
     b::Vector pos{posxDist(gen), posyDist(gen)};
@@ -122,7 +124,7 @@ BoidSimulation buildSimulation(const simConfig& cfg) {
     double spd = speedDist(gen);
     Vector speed{std::cos(ang) * spd, std::sin(ang) * spd};
 
-    sim.addBoids(b::Boid(pos, speed, fid));
+    sim.addBoids(b::Boid(pos, speed, static_cast<int>(fid)));
   }
   return sim;
 }

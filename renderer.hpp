@@ -1,5 +1,5 @@
-#ifndef VISUALIZZAZIONE_HPP
-#define VISUALIZZAZIONE_HPP
+#ifndef RENDERER_HPP
+#define RENDERER_HPP
 
 #include <SFML/Graphics.hpp>
 #include <vector>

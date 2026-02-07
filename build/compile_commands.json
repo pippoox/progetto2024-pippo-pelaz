@@ -16,6 +16,11 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sim.dir/Debug/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
   "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/Release/main.cpp.o -c /home/righif5/progetto2024-righi-zauli/main.cpp",
   "file": "/home/righif5/progetto2024-righi-zauli/main.cpp"
 },
@@ -28,6 +33,11 @@
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
   "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/Release/simulation_setup.cpp.o -c /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp",
   "file": "/home/righif5/progetto2024-righi-zauli/simulation_setup.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/Release/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -46,8 +56,13 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/main.grafica.cpp.o -c /home/righif5/progetto2024-righi-zauli/main.grafica.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/main.grafica.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sim.dir/RelWithDebInfo/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/main_sfml.cpp.o -c /home/righif5/progetto2024-righi-zauli/main_sfml.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/main_sfml.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -61,13 +76,18 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/visualizzazione.cpp.o -c /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/visualizzazione.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/renderer.cpp.o -c /home/righif5/progetto2024-righi-zauli/renderer.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/renderer.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o -c /home/righif5/progetto2024-righi-zauli/main.grafica.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/main.grafica.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.sfml.dir/Debug/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/main_sfml.cpp.o -c /home/righif5/progetto2024-righi-zauli/main_sfml.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/main_sfml.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -81,13 +101,18 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o -c /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/visualizzazione.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/renderer.cpp.o -c /home/righif5/progetto2024-righi-zauli/renderer.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/renderer.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/main.grafica.cpp.o -c /home/righif5/progetto2024-righi-zauli/main.grafica.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/main.grafica.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/Release/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/main_sfml.cpp.o -c /home/righif5/progetto2024-righi-zauli/main_sfml.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/main_sfml.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -101,8 +126,13 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/visualizzazione.cpp.o -c /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/visualizzazione.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/renderer.cpp.o -c /home/righif5/progetto2024-righi-zauli/renderer.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/renderer.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.sfml.dir/RelWithDebInfo/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -111,8 +141,8 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.t.dir/Debug/boids.test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids.test.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/boids.test.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.t.dir/Debug/boids_test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids_test.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/boids_test.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -121,13 +151,18 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Debug\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -g -fsanitize=address,undefined -std=c++20 -o CMakeFiles/boids.t.dir/Debug/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
   "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/boids.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids.cpp",
   "file": "/home/righif5/progetto2024-righi-zauli/boids.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/boids.test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids.test.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/boids.test.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/boids_test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids_test.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/boids_test.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
@@ -136,17 +171,27 @@
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"Release\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/Release/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
   "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids.cpp",
   "file": "/home/righif5/progetto2024-righi-zauli/boids.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
-  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/boids.test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids.test.cpp",
-  "file": "/home/righif5/progetto2024-righi-zauli/boids.test.cpp"
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/boids_test.cpp.o -c /home/righif5/progetto2024-righi-zauli/boids_test.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/boids_test.cpp"
 },
 {
   "directory": "/home/righif5/progetto2024-righi-zauli/build",
   "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/simulation_setup.cpp.o -c /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp",
   "file": "/home/righif5/progetto2024-righi-zauli/simulation_setup.cpp"
+},
+{
+  "directory": "/home/righif5/progetto2024-righi-zauli/build",
+  "command": "/usr/bin/c++ -DCMAKE_INTDIR=\\\"RelWithDebInfo\\\"  -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O2 -g -DNDEBUG -std=c++20 -o CMakeFiles/boids.t.dir/RelWithDebInfo/stats.cpp.o -c /home/righif5/progetto2024-righi-zauli/stats.cpp",
+  "file": "/home/righif5/progetto2024-righi-zauli/stats.cpp"
 }
 ]

@@ -1,10 +1,11 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+
 #include "boids.hpp"
 
 #include "doctest.h"
+#include "renderer.hpp"
 #include "simulation_setup.hpp"
 #include "stats.hpp"
-#include "visualizzazione.hpp"
 
 TEST_CASE("Testing b::Vector implementation") {
   SUBCASE("Testing operator+") {
@@ -153,11 +154,10 @@ TEST_CASE("Testing BoidSimulation Integration (updateBoids)") {
     b::Flock f(0, 10.0, 2.0, 0.0, 0.0, 0.0, 1.2, 6.0);
     b::BoidSimulation sim({f}, 100.0, 100.0);
 
-    b::Boid b1({50.0, 50.0}, {5.9, 0.0}, 0);
+    b::Boid b1({50.0, 50.0}, {0.9, 0.0}, 0);
 
     sim.addBoids(b1);
 
-    double dt = 1.0;
     sim.updateBoids(1.0);
 
     const auto& boids = sim.getBoids();
@@ -299,7 +299,7 @@ TEST_CASE("Stats::computeMeanDistance") {
     auto s = b::computeMeanDistance(boids);
 
     const double mean = (4.0 + 2.0 * std::sqrt(2.0)) / 6.0;
-    const double e2 = 4.0 / 3.0; 
+    const double e2 = 4.0 / 3.0;
     const double var = e2 - mean * mean;
     const double stddev = std::sqrt(var);
 
@@ -307,4 +307,11 @@ TEST_CASE("Stats::computeMeanDistance") {
     CHECK(s.stdDev == doctest::Approx(stddev));
   }
 }
-
+TEST_CASE("Three boids same position -> mean=0, stdDev=0") {
+  std::vector<b::Boid> boids = {b::Boid({5.0, 5.0}, {0.0, 0.0}, 0),
+                                b::Boid({5.0, 5.0}, {0.0, 0.0}, 0),
+                                b::Boid({5.0, 5.0}, {0.0, 0.0}, 0)};
+  auto s = b::computeMeanDistance(boids);
+  CHECK(s.mean == doctest::Approx(0.0));
+  CHECK(s.stdDev == doctest::Approx(0.0));
+}

@@ -232,6 +232,13 @@ build CMakeFiles/boids.sim.dir/Release/simulation_setup.cpp.o: CXX_COMPILER__boi
   OBJECT_DIR = CMakeFiles/boids.sim.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/Release
 
+build CMakeFiles/boids.sim.dir/Release/stats.cpp.o: CXX_COMPILER__boids.2esim_Release /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.sim_RELEASE
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/boids.sim.dir/Release/stats.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sim.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/boids.sim.dir/Release
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target boids.sim
@@ -240,7 +247,7 @@ build CMakeFiles/boids.sim.dir/Release/simulation_setup.cpp.o: CXX_COMPILER__boi
 #############################################
 # Link the executable Release/boids.sim
 
-build Release/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_Release CMakeFiles/boids.sim.dir/Release/main.cpp.o CMakeFiles/boids.sim.dir/Release/boids.cpp.o CMakeFiles/boids.sim.dir/Release/simulation_setup.cpp.o
+build Release/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_Release CMakeFiles/boids.sim.dir/Release/main.cpp.o CMakeFiles/boids.sim.dir/Release/boids.cpp.o CMakeFiles/boids.sim.dir/Release/simulation_setup.cpp.o CMakeFiles/boids.sim.dir/Release/stats.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.sim.dir/Release
   POST_BUILD = :
@@ -257,9 +264,9 @@ build Release/boids.sim: CXX_EXECUTABLE_LINKER__boids.2esim_Release CMakeFiles/b
 
 build cmake_object_order_depends_target_boids.sfml_RELEASE: phony || CMakeFiles/boids.sfml.dir
 
-build CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o: CXX_COMPILER__boids.2esfml_Release /home/righif5/progetto2024-righi-zauli/main.grafica.cpp || cmake_object_order_depends_target_boids.sfml_RELEASE
+build CMakeFiles/boids.sfml.dir/Release/main_sfml.cpp.o: CXX_COMPILER__boids.2esfml_Release /home/righif5/progetto2024-righi-zauli/main_sfml.cpp || cmake_object_order_depends_target_boids.sfml_RELEASE
   DEFINES = -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/Release/main_sfml.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/Release
@@ -278,9 +285,16 @@ build CMakeFiles/boids.sfml.dir/Release/simulation_setup.cpp.o: CXX_COMPILER__bo
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/Release
 
-build CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o: CXX_COMPILER__boids.2esfml_Release /home/righif5/progetto2024-righi-zauli/visualizzazione.cpp || cmake_object_order_depends_target_boids.sfml_RELEASE
+build CMakeFiles/boids.sfml.dir/Release/renderer.cpp.o: CXX_COMPILER__boids.2esfml_Release /home/righif5/progetto2024-righi-zauli/renderer.cpp || cmake_object_order_depends_target_boids.sfml_RELEASE
   DEFINES = -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.sfml.dir/Release/renderer.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.sfml.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/Release
+
+build CMakeFiles/boids.sfml.dir/Release/stats.cpp.o: CXX_COMPILER__boids.2esfml_Release /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.sfml_RELEASE
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/boids.sfml.dir/Release/stats.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.sfml.dir/Release
@@ -293,7 +307,7 @@ build CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o: CXX_COMPILER__boi
 #############################################
 # Link the executable Release/boids.sfml
 
-build Release/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_Release CMakeFiles/boids.sfml.dir/Release/main.grafica.cpp.o CMakeFiles/boids.sfml.dir/Release/boids.cpp.o CMakeFiles/boids.sfml.dir/Release/simulation_setup.cpp.o CMakeFiles/boids.sfml.dir/Release/visualizzazione.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
+build Release/boids.sfml: CXX_EXECUTABLE_LINKER__boids.2esfml_Release CMakeFiles/boids.sfml.dir/Release/main_sfml.cpp.o CMakeFiles/boids.sfml.dir/Release/boids.cpp.o CMakeFiles/boids.sfml.dir/Release/simulation_setup.cpp.o CMakeFiles/boids.sfml.dir/Release/renderer.cpp.o CMakeFiles/boids.sfml.dir/Release/stats.cpp.o | /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1 /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG
   LINK_LIBRARIES = /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.5.1  /usr/lib/x86_64-linux-gnu/libsfml-system.so.2.5.1
   OBJECT_DIR = CMakeFiles/boids.sfml.dir/Release
@@ -318,9 +332,9 @@ build CMakeFiles/boids.t.dir/Release/boids.cpp.o: CXX_COMPILER__boids.2et_Releas
   OBJECT_DIR = CMakeFiles/boids.t.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/Release
 
-build CMakeFiles/boids.t.dir/Release/boids.test.cpp.o: CXX_COMPILER__boids.2et_Release /home/righif5/progetto2024-righi-zauli/boids.test.cpp || cmake_object_order_depends_target_boids.t_RELEASE
+build CMakeFiles/boids.t.dir/Release/boids_test.cpp.o: CXX_COMPILER__boids.2et_Release /home/righif5/progetto2024-righi-zauli/boids_test.cpp || cmake_object_order_depends_target_boids.t_RELEASE
   DEFINES = -DCMAKE_INTDIR=\"Release\"
-  DEP_FILE = CMakeFiles/boids.t.dir/Release/boids.test.cpp.o.d
+  DEP_FILE = CMakeFiles/boids.t.dir/Release/boids_test.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/Release
@@ -328,6 +342,13 @@ build CMakeFiles/boids.t.dir/Release/boids.test.cpp.o: CXX_COMPILER__boids.2et_R
 build CMakeFiles/boids.t.dir/Release/simulation_setup.cpp.o: CXX_COMPILER__boids.2et_Release /home/righif5/progetto2024-righi-zauli/simulation_setup.cpp || cmake_object_order_depends_target_boids.t_RELEASE
   DEFINES = -DCMAKE_INTDIR=\"Release\"
   DEP_FILE = CMakeFiles/boids.t.dir/Release/simulation_setup.cpp.o.d
+  FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
+  OBJECT_DIR = CMakeFiles/boids.t.dir/Release
+  OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/Release
+
+build CMakeFiles/boids.t.dir/Release/stats.cpp.o: CXX_COMPILER__boids.2et_Release /home/righif5/progetto2024-righi-zauli/stats.cpp || cmake_object_order_depends_target_boids.t_RELEASE
+  DEFINES = -DCMAKE_INTDIR=\"Release\"
+  DEP_FILE = CMakeFiles/boids.t.dir/Release/stats.cpp.o.d
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG -std=c++20
   OBJECT_DIR = CMakeFiles/boids.t.dir/Release
   OBJECT_FILE_DIR = CMakeFiles/boids.t.dir/Release
@@ -340,7 +361,7 @@ build CMakeFiles/boids.t.dir/Release/simulation_setup.cpp.o: CXX_COMPILER__boids
 #############################################
 # Link the executable Release/boids.t
 
-build Release/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_Release CMakeFiles/boids.t.dir/Release/boids.cpp.o CMakeFiles/boids.t.dir/Release/boids.test.cpp.o CMakeFiles/boids.t.dir/Release/simulation_setup.cpp.o
+build Release/boids.t: CXX_EXECUTABLE_LINKER__boids.2et_Release CMakeFiles/boids.t.dir/Release/boids.cpp.o CMakeFiles/boids.t.dir/Release/boids_test.cpp.o CMakeFiles/boids.t.dir/Release/simulation_setup.cpp.o CMakeFiles/boids.t.dir/Release/stats.cpp.o
   FLAGS = -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -Wshadow -Wimplicit-fallthrough -Wextra-semi -Wold-style-cast -fno-omit-frame-pointer -D_GLIBCXX_ASSERTIONS -D_GLIBCXX_SANITIZE_STD_ALLOCATOR -O3 -DNDEBUG
   OBJECT_DIR = CMakeFiles/boids.t.dir/Release
   POST_BUILD = :

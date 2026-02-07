@@ -2,26 +2,28 @@
 #define B_SIMULATION_SETUP_HPP
 
 #include <vector>
+
 #include "boids.hpp"
 
 namespace b {
 
-// Struct SimConfig: contiene gli oggetti necessari per creare la simualzione.
+// SimConfig struct: holds the parameters required to initialize the simulation
 struct simConfig {
-  std::size_t N = 0;   // Numero di boid
-  std::size_t NF = 0;  // Numero di stormi
-  std::vector<Flock> flocks;
-  std::vector<std::size_t> count;  // Vettore che contiene numero di boid per ogni flock
+  std::size_t N = 0;               // Total number of boids
+  std::size_t NF = 0;              // Total number of flocks
+  std::vector<Flock> flocks;       // Collection of flock parameters
+  std::vector<std::size_t> count;  // Number of boids assigned to each flock
 
-  double width;
-  double height;
-  double dt;
+  double width;   // Width of the simulation area
+  double height;  // Height of the simulation area
+  double dt;      // Time step for physics updates (Delta Time)
 };
 
-simConfig readConfig();  // Gestisce input utente per costruire simulazione
+// Handles user input or file parsing to construct the simulation configuration
+simConfig readConfig();
+
+// Builds the simulation by processing config and generating random boid states
 BoidSimulation buildSimulation(const simConfig& cfg);
-// Costruisce la simulazione ricevendo input utente e generando posizioni e
-// velocità casuali per ogni boid
 
 }  // namespace b
 

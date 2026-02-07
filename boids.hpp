@@ -2,6 +2,7 @@
 #define B_BOIDS_HPP
 
 #include <vector>
+#include <cstddef>
 
 namespace b {
 
@@ -49,7 +50,7 @@ struct Flock {
         a{a_},
         c{c_},
         minSpeed{minS_},
-        maxSpeed{maxS_} {};
+        maxSpeed{maxS_} {}
 };
 
 // Classe BoidSimulation: rappresenta un insieme di boid che possono appartenere

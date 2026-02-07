@@ -1,9 +1,10 @@
 
+#include "stats.hpp"
+
 #include <cmath>
 #include <vector>
 
 #include "boids.hpp"
-#include "stats.hpp"
 
 namespace b {
 
@@ -12,11 +13,13 @@ static Stats finalizeStats(double sum, double sumSq, size_t count) {
 
   const double mean = sum / static_cast<double>(count);
   double var = (sumSq / static_cast<double>(count)) - mean * mean;
-  if (var < 0.0) var = 0.0; 
+  if (var < 0.0) var = 0.0;
 
   return {mean, std::sqrt(var)};
 }
 
+// Calculates the average distance and its standard deviation between all unique
+// pairs of boids in the population.
 Stats computeMeanDistance(const std::vector<b::Boid>& boids) {
   size_t n = boids.size();
   if (n < 2) return {0.0, 0.0};
@@ -37,6 +40,8 @@ Stats computeMeanDistance(const std::vector<b::Boid>& boids) {
   return finalizeStats(sum, sumSq, pairs);
 }
 
+// Computes the average speed and velocity dispersion across the entire boid
+// population.
 Stats computeMeanSpeed(const std::vector<b::Boid>& boids) {
   double sum = 0.0;
   double sumSq = 0.0;

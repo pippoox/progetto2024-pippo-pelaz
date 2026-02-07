@@ -41,21 +41,23 @@ std::vector<size_t> BoidSimulation::getNeighbors(size_t i, double d) const {
   return neighbors;
 }
 
-std::vector<size_t> BoidSimulation::getNeighborsDS(size_t indice,
+std::vector<size_t> BoidSimulation::getNeighborsDS(size_t i,
                                                    double ds) const {
   std::vector<size_t> neighborsDS;
-  const Boid& boid = boids[indice];
-  for (size_t i = 0; i < boids.size(); ++i) {
-    if (i != indice) {
-      double distance = (boids[i].position - boid.position).length();
+  const Boid& boid = boids[i];
+  for (size_t j = 0; j < boids.size(); ++j) {
+    if (j != i) {
+      double distance = (boids[j].position - boid.position).length();
       if (distance < ds) {
-        neighborsDS.push_back(i);
+        neighborsDS.push_back(j);
       }
     }
   }
   return neighborsDS;
 }
 
+// Separation: avoids crowding and collisions with nearby neighbors.
+// Steers away from neighbors that are within the 'ds' (separation distance) radius.
 Vector BoidSimulation::separation(size_t i,
                                   const std::vector<size_t>& neighborsDS,
                                   double s) {
@@ -71,6 +73,9 @@ Vector BoidSimulation::separation(size_t i,
   return sum * s;
 }
 
+// Alignment: steers boids towards the average heading of local neighbors.
+// Calculates the average speed of neighbors and adjusts the boid's 
+// speed to match the group's direction and speed.
 Vector BoidSimulation::alignment(size_t i,
                                  const std::vector<size_t>& getNeighbors,
                                  double a) {
@@ -85,6 +90,8 @@ Vector BoidSimulation::alignment(size_t i,
   return diff * a;
 }
 
+// Cohesion: steers boids toward the average position (center of mass) of local neighbors.
+// This keeps the flock together by preventing individual boids from drifting away.
 Vector BoidSimulation::cohesion(size_t i,
                                 const std::vector<size_t>& getNeighbors,
                                 double c) {
@@ -101,6 +108,9 @@ Vector BoidSimulation::cohesion(size_t i,
   return centerDirection * c;
 }
 
+// Main update loop for all boids in the simulation.
+// Computes all three steering forces, applies velocity limits (clamping),
+// updates positions, and handles screen-wrap boundaries.
 void BoidSimulation::updateBoids(double dt) {
   std::vector<Vector> newSpeed(boids.size());
   std::vector<Vector> newPosition(boids.size());
@@ -128,7 +138,7 @@ void BoidSimulation::updateBoids(double dt) {
 
     Vector pos = boid.position + vel * dt;
 
-    // Gestione ai bordi dello schermo:
+    // Toroidal world logic: boids that exit one side of the screen reappear on the opposite side.
     if (pos.x < 0) pos.x = width;
     if (pos.x > width) pos.x = 0;
     if (pos.y < 0) pos.y = height;

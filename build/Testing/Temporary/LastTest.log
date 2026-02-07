@@ -1,24 +1,24 @@
-Start testing: Feb 06 21:10 CET
+Start testing: Feb 07 16:42 CET
 ----------------------------------------------------------
 1/1 Testing: boids.t
 1/1 Test: boids.t
 Command: "/home/righif5/progetto2024-righi-zauli/build/Release/boids.t"
 Directory: /home/righif5/progetto2024-righi-zauli/build
-"boids.t" start time: Feb 06 21:10 CET
+"boids.t" start time: Feb 07 16:42 CET
 Output:
 ----------------------------------------------------------
 [doctest] doctest version is "2.4.12"
 [doctest] run with "--help" for options
 ===============================================================================
-[doctest] test cases:  4 |  4 passed | 0 failed | 0 skipped
-[doctest] assertions: 70 | 70 passed | 0 failed |
+[doctest] test cases:  7 |  7 passed | 0 failed | 0 skipped
+[doctest] assertions: 91 | 91 passed | 0 failed |
 [doctest] Status: SUCCESS!
 <end of output>
-Test time =   0.02 sec
+Test time =   0.01 sec
 ----------------------------------------------------------
 Test Passed.
-"boids.t" end time: Feb 06 21:10 CET
+"boids.t" end time: Feb 07 16:42 CET
 "boids.t" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Feb 06 21:10 CET
+End testing: Feb 07 16:42 CET
