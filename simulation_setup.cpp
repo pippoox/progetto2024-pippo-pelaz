@@ -15,7 +15,7 @@ simConfig readConfig() {
   simConfig cfg;
   cfg.width = 800;
   cfg.height = 600;
-  cfg.dt = 0.1;
+  cfg.dt = 0.5;
   int input;
 
   std::cout << "Inserisci N(int):\n";
